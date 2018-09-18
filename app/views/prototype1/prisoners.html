@@ -1,0 +1,45 @@
+{% extends "prototype1/layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Prisoners</h1>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <div class="form-group">
+      <input class="govuk-input" id="search" name="search" type="text" placeholder="Search">
+    </div>
+  </div>
+</div>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col">Prisoner</th>
+      <th class="govuk-table__header" scope="col">Prisoner number</th>
+      <th class="govuk-table__header" scope="col">Sentence calc</th>
+      <th class="govuk-table__header" scope="col">Arrival date</th>
+      <th class="govuk-table__header" scope="col">Release date</th>
+      <th class="govuk-table__header" scope="col">Details</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    {% for prisoner in data['prisoners'] %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row"><a href="/prototype1/prisoner/{{loop.index0}}">{{prisoner | fullName}}</a></td>
+      <td class="govuk-table__cell" scope="row">{{prisoner.number}}</td>
+      <td class="govuk-table__cell" scope="row">{{prisoner.sentence_calc}}</td>
+      <td class="govuk-table__cell" scope="row">{{prisoner.arrival_date}}</td>
+      <td class="govuk-table__cell" scope="row">{{prisoner.release_date}}</td>
+      <td class="govuk-table__cell"><a href="/prototype1/prisoner/{{loop.index0}}">Details</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

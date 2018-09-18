@@ -1,0 +1,160 @@
+{% extends "prototype2/layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% set allocatedPrisoners = data.prisoners | allocatedPrisoners %}
+{% set unallocatedPrisoners = data.prisoners | unallocatedPrisoners %}
+{% set untieredPrisoners = data.prisoners | untieredPrisoners %}
+{% set unprocessedPrisoners = data.prisoners | unprocessedPrisoners %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">Allocations</h1>
+
+  <div class="govuk-tabs" data-module="tabs">
+    <h2 class="govuk-tabs__title">
+      Allocations
+    </h2>
+
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#allocated">
+          Allocated ({{allocatedPrisoners.length}})
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#awaiting-allocation">
+          Awaiting allocation ({{unallocatedPrisoners.length}})
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#awaiting-tiering">
+          Awaiting tiering ({{untieredPrisoners.length}})
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#awaiting-processing">
+          Awaiting processing ({{unprocessedPrisoners.length}})
+        </a>
+      </li>
+    </ul>
+
+    <section class="govuk-tabs__panel" id="allocated">
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Prisoner name</th>
+            <th class="govuk-table__header" scope="col">Prisoner number</th>
+            <th class="govuk-table__header" scope="col">Arrival date</th>
+            <th class="govuk-table__header" scope="col">Release date</th>
+            <th class="govuk-table__header" scope="col">Tier</th>
+            <th class="govuk-table__header" scope="col">Status change</th>
+            <th class="govuk-table__header" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for prisoner in allocatedPrisoners %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{prisoner | prisonerName}}</td>
+            <td class="govuk-table__cell ">{{prisoner.number}}</td>
+            <td class="govuk-table__cell ">{{prisoner.arrival_date}}</td>
+            <td class="govuk-table__cell ">{{prisoner.release_date}}</td>
+            <td class="govuk-table__cell ">{{prisoner.tier}}</td>
+            <td class="govuk-table__cell ">{{prisoner.status_change}}</td>
+            <td class="govuk-table__cell "><a href="">Details</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </section>
+    <section class="govuk-tabs__panel" id="awaiting-allocation">
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Prisoner name</th>
+            <th class="govuk-table__header" scope="col">Prisoner number</th>
+            <th class="govuk-table__header" scope="col">Arrival date</th>
+            <th class="govuk-table__header" scope="col">Release date</th>
+            <th class="govuk-table__header" scope="col">Tier</th>
+            <th class="govuk-table__header" scope="col">Status change</th>
+            <th class="govuk-table__header" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for prisoner in unallocatedPrisoners %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{prisoner | prisonerName}}</td>
+            <td class="govuk-table__cell ">{{prisoner.number}}</td>
+            <td class="govuk-table__cell ">{{prisoner.arrival_date}}</td>
+            <td class="govuk-table__cell ">{{prisoner.release_date}}</td>
+            <td class="govuk-table__cell ">{{prisoner.tier}}</td>
+            <td class="govuk-table__cell ">{{prisoner.status_change}}</td>
+            <td class="govuk-table__cell "><a href="/prototype2/allocate/{{prisoner.id}}">Allocate</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </section>
+    <section class="govuk-tabs__panel" id="awaiting-tiering">
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Prisoner name</th>
+            <th class="govuk-table__header" scope="col">Prisoner number</th>
+            <th class="govuk-table__header" scope="col">Arrival date</th>
+            <th class="govuk-table__header" scope="col">Release date</th>
+            <th class="govuk-table__header" scope="col">Status change</th>
+            <th class="govuk-table__header" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for prisoner in untieredPrisoners %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{prisoner | prisonerName}}</td>
+            <td class="govuk-table__cell ">{{prisoner.number}}</td>
+            <td class="govuk-table__cell ">{{prisoner.arrival_date}}</td>
+            <td class="govuk-table__cell ">{{prisoner.release_date}}</td>
+            <td class="govuk-table__cell ">{{prisoner.status_change}}</td>
+            <td class="govuk-table__cell "><a href="/prototype2/tiering/{{prisoner.id}}">Complete tiering</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </section>
+    <section class="govuk-tabs__panel" id="awaiting-processing">
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Prisoner name</th>
+            <th class="govuk-table__header" scope="col">Prisoner number</th>
+            <th class="govuk-table__header" scope="col">Arrival date</th>
+            <th class="govuk-table__header" scope="col">Release date</th>
+            <th class="govuk-table__header" scope="col">Status change</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for prisoner in unprocessedPrisoners %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{prisoner | prisonerName}}</td>
+            <td class="govuk-table__cell ">{{prisoner.number}}</td>
+            <td class="govuk-table__cell ">{{prisoner.arrival_date}}</td>
+            <td class="govuk-table__cell ">{{prisoner.release_date}}</td>
+            <td class="govuk-table__cell ">{{prisoner.status_change}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </section>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,85 @@
+
+{% extends "prototype2/layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% set allocatedPrisoners = data.prisoners | allocatedPrisoners %}
+{% set unallocatedPrisoners = data.prisoners | unallocatedPrisoners %}
+{% set untieredPrisoners = data.prisoners | untieredPrisoners %}
+{% set unprocessedPrisoners = data.prisoners | unprocessedPrisoners %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">Allocations</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          <div class="box textalign--center">
+            <p>
+              <span class="govuk-body govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">{{allocatedPrisoners.length}}</span>
+              <br/>
+              <span class="govuk-body govuk-!-font-size-16">Allocated</span>
+            </p>
+            <a href="/prototype2/allocations.html#allocated">Manage</a>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <div class="box textalign--center">
+            <p>
+              <span class="govuk-body govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">{{unallocatedPrisoners.length}}</span>
+              <br/>
+              <span class="govuk-body govuk-!-font-size-16">Awaiting allocation</span>
+            </p>
+            <a href="/prototype2/allocations.html#awaiting-allocation">Allocate a POM to a prisoner</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          <div class="box textalign--center">
+            <p>
+              <span class="govuk-body govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">{{untieredPrisoners.length}}</span>
+              <br/>
+              <span class="govuk-body govuk-!-font-size-16">Awaiting tiering</span>
+            </p>
+            <a href="/prototype2/allocations.html#awaiting-tiering">Complete prisoner tiering information</a>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <div class="box textalign--center">
+            <p>
+              <span class="govuk-body govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">{{unprocessedPrisoners.length}}</span>
+              <br/>
+              <span class="govuk-body govuk-!-font-size-16">Awaiting sentence calculation</span>
+            </p>
+            <a href="/prototype2/allocations.html#awaiting-processing">View prisoners</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          <div class="box textalign--center">
+            <p>
+              <span class="govuk-body govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">{{data.poms.length}}</span>
+              <br/>
+              <span class="govuk-body govuk-!-font-size-16">Prison offender managers</span>
+            </p>
+            <a href="">Add, remove and manage POM details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

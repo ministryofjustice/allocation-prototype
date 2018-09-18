@@ -1,0 +1,23 @@
+
+{% extends "prototype1/layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">Manage prisoners</h2>
+      <p>Manage prisoner allocations to prison offender managers from here</p>
+      <a href="/prototype1/allocation.html">Manage allocations</a>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">Manage prisoner offender managers</h2>
+      <p>Add, remove and manage POM details</p>
+      <a href="/prototype1/poms.html">Manage</a>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "prototype1/layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% set pomSort = data.poms | sort %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Manage prisoner offender managers</h1>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <div class="form-group">
+      <input class="govuk-input" id="search" name="search" type="text" placeholder="Search">
+    </div>
+  </div>
+</div>
+
+{{ govukButton({
+  text: "Add POM"
+}) }}
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col">Offender manager</th>
+      <th class="govuk-table__header" scope="col">Currently allocated</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    {% for pom in data['poms'] %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row"><a href="/prototype1/pom/{{loop.index0}}">{{pom | fullName}}</a></td>
+      <td class="govuk-table__cell" scope="row">{{pom.capacity}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
