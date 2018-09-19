@@ -4,6 +4,8 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
+{% set prisoners = data.prisoners | unallocatedPrisoners %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -17,22 +19,7 @@
   </div>
 </div>
 
-<!-- <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">&nbsp;</div>
-  <div class="govuk-grid-column-one-third">
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="status">
-        View allocation status
-      </label>
-      <select class="govuk-select" id="status" name="status">
-        <option value="unallocated">Unallocated</option>
-        <option value="allocated">Allocated</option>
-      </select>
-    </div>
-  </div>
-</div> -->
-
-<table class="govuk-table">
+<table class="govuk-table responsive">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th class="govuk-table__header" scope="col">Prisoner</th>
@@ -44,14 +31,14 @@
     </tr>
   </thead>
   <tbody class="govuk-table__body">
-    {% for prisoner in data['prisoners'] %}
+    {% for prisoner in prisoners %}
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell" scope="row"><a href="/prototype1/prisoner/{{loop.index0}}">{{prisoner | fullName}}</a></td>
-      <td class="govuk-table__cell" scope="row">{{prisoner.number}}</td>
-      <td class="govuk-table__cell" scope="row">{{prisoner.sentence_calc}}</td>
-      <td class="govuk-table__cell" scope="row">{{prisoner.arrival_date}}</td>
-      <td class="govuk-table__cell" scope="row">{{prisoner.release_date}}</td>
-      <td class="govuk-table__cell">
+      <td aria-label="" class="govuk-table__cell" scope="row"><a href="/prototype1/prisoner/{{loop.index0}}">{{prisoner | fullName}}</a></td>
+      <td aria-label="" class="govuk-table__cell" scope="row">{{prisoner.number}}</td>
+      <td aria-label="" class="govuk-table__cell" scope="row">{{prisoner.sentence_calc}}</td>
+      <td aria-label="" class="govuk-table__cell" scope="row">{{prisoner.arrival_date}}</td>
+      <td aria-label="" class="govuk-table__cell" scope="row">{{prisoner.release_date}}</td>
+      <td aria-label="" class="govuk-table__cell">
         <select class="govuk-select" id="pom" name="pom">
           <option value="">Please select</option>
           {% for pom in data.poms %}
@@ -65,8 +52,7 @@
 </table>
 
 {{ govukButton({
-  text: "Allocate all selected",
-  href: "/"
+  text: "Allocate all selected"
 }) }}
 
 {% endblock %}

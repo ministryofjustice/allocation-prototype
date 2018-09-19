@@ -25,18 +25,16 @@
       <th class="govuk-table__header" scope="col">Sentence calc</th>
       <th class="govuk-table__header" scope="col">Arrival date</th>
       <th class="govuk-table__header" scope="col">Release date</th>
-      <th class="govuk-table__header" scope="col">Details</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     {% for prisoner in data['prisoners'] %}
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell" scope="row"><a href="/prototype1/prisoner/{{loop.index0}}">{{prisoner | fullName}}</a></td>
+      <td class="govuk-table__cell" scope="row"><a href="/prototype1/prisoner/{{prisoner.id}}">{{prisoner | fullName}}</a></td>
       <td class="govuk-table__cell" scope="row">{{prisoner.number}}</td>
       <td class="govuk-table__cell" scope="row">{{prisoner.sentence_calc}}</td>
       <td class="govuk-table__cell" scope="row">{{prisoner.arrival_date}}</td>
       <td class="govuk-table__cell" scope="row">{{prisoner.release_date}}</td>
-      <td class="govuk-table__cell"><a href="/prototype1/prisoner/{{loop.index0}}">Details</a></td>
     </tr>
     {% endfor %}
   </tbody>

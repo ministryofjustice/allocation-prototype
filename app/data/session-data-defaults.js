@@ -174,7 +174,7 @@ module.exports = {
   "release_date": "02/01/2018",
   "tier": null,
   "status_change": "20/09/2018",
-  "allocated": true
+  "allocated": false
 }, {
   "id": "12",
   "first_name": "Lemar",
@@ -188,7 +188,7 @@ module.exports = {
   "release_date": "01/01/2018",
   "tier": null,
   "status_change": "08/09/2018",
-  "allocated": true
+  "allocated": false
 }, {
   "id": "13",
   "first_name": "Lamar",
@@ -300,7 +300,7 @@ module.exports = {
   "release_date": null,
   "tier": null,
   "status_change": "08/09/2018",
-  "allocated": true
+  "allocated": false
 }, {
   "id": "21",
   "first_name": "Niko",
@@ -342,7 +342,7 @@ module.exports = {
   "release_date": "09/01/2018",
   "tier": null,
   "status_change": "20/09/2018",
-  "allocated": true
+  "allocated": false
 }, {
   "id": "24",
   "first_name": "Chadwick",
@@ -370,7 +370,7 @@ module.exports = {
   "release_date": "04/01/2018",
   "tier": null,
   "status_change": "02/09/2018",
-  "allocated": true
+  "allocated": false
 }, {
   "id": "26",
   "first_name": "Evyn",
@@ -412,7 +412,7 @@ module.exports = {
   "release_date": "07/01/2018",
   "tier": null,
   "status_change": "14/09/2018",
-  "allocated": true
+  "allocated": false
 }, {
   "id": "29",
   "first_name": "Costa",
@@ -443,28 +443,147 @@ module.exports = {
   "allocated": false
 }],
 
-  "poms": [
-    {
-      "first_name": "Alan",
-      "surname": "Kennedy",
-      "capacity": 2
-    },
-    {
-      "first_name": "Toby",
-      "surname": "Retallick",
-      "capacity": 6
-    },
-    {
-      "first_name": "Kay",
-      "surname": "Southam",
-      "capacity": 4
-    },
-    {
-      "first_name": "Kath",
-      "surname": "Kath Pobee-Norris",
-      "capacity": 12
-    }
-  ]
+  "poms": [{
+  "id": 1,
+  "first_name": "Melloney",
+  "surname": "Gleave",
+  "email": "mgleave0@ft.com",
+  "gender": "Female",
+  "capacity": 18
+}, {
+  "id": 2,
+  "first_name": "Hobart",
+  "surname": "Southern",
+  "email": "hsouthern1@columbia.edu",
+  "gender": "Male",
+  "capacity": 14
+}, {
+  "id": 3,
+  "first_name": "Kathi",
+  "surname": "Mitrovic",
+  "email": "kmitrovic2@archive.org",
+  "gender": "Female",
+  "capacity": 5
+}, {
+  "id": 4,
+  "first_name": "Gabriel",
+  "surname": "Busson",
+  "email": "gbusson3@indiatimes.com",
+  "gender": "Male",
+  "capacity": 18
+}, {
+  "id": 5,
+  "first_name": "Nissa",
+  "surname": "Imorts",
+  "email": "nimorts4@prlog.org",
+  "gender": "Female",
+  "capacity": 14
+}, {
+  "id": 6,
+  "first_name": "Cece",
+  "surname": "Beevor",
+  "email": "cbeevor5@themeforest.net",
+  "gender": "Male",
+  "capacity": 4
+}, {
+  "id": 7,
+  "first_name": "Engracia",
+  "surname": "Larroway",
+  "email": "elarroway6@example.com",
+  "gender": "Female",
+  "capacity": 17
+}, {
+  "id": 8,
+  "first_name": "Ed",
+  "surname": "Pow",
+  "email": "epow7@goo.gl",
+  "gender": "Male",
+  "capacity": 17
+}, {
+  "id": 9,
+  "first_name": "Gearard",
+  "surname": "Burtonshaw",
+  "email": "gburtonshaw8@4shared.com",
+  "gender": "Male",
+  "capacity": 18
+}, {
+  "id": 10,
+  "first_name": "Aili",
+  "surname": "Cutbirth",
+  "email": "acutbirth9@vkontakte.ru",
+  "gender": "Female",
+  "capacity": 1
+}, {
+  "id": 11,
+  "first_name": "Mathian",
+  "surname": "Gajewski",
+  "email": "mgajewskia@disqus.com",
+  "gender": "Male",
+  "capacity": 17
+}, {
+  "id": 12,
+  "first_name": "Spense",
+  "surname": "Shorto",
+  "email": "sshortob@desdev.cn",
+  "gender": "Male",
+  "capacity": 14
+}, {
+  "id": 13,
+  "first_name": "Sollie",
+  "surname": "Dowdle",
+  "email": "sdowdlec@diigo.com",
+  "gender": "Male",
+  "capacity": 5
+}, {
+  "id": 14,
+  "first_name": "Yehudit",
+  "surname": "Zorzi",
+  "email": "yzorzid@discuz.net",
+  "gender": "Male",
+  "capacity": 12
+}, {
+  "id": 15,
+  "first_name": "Griffie",
+  "surname": "Presman",
+  "email": "gpresmane@tinyurl.com",
+  "gender": "Male",
+  "capacity": 4
+}, {
+  "id": 16,
+  "first_name": "Clareta",
+  "surname": "Lenz",
+  "email": "clenzf@mail.ru",
+  "gender": "Female",
+  "capacity": 10
+}, {
+  "id": 17,
+  "first_name": "Rorie",
+  "surname": "Dorber",
+  "email": "rdorberg@parallels.com",
+  "gender": "Female",
+  "capacity": 7
+}, {
+  "id": 18,
+  "first_name": "Harman",
+  "surname": "Minichillo",
+  "email": "hminichilloh@alibaba.com",
+  "gender": "Male",
+  "capacity": 11
+}, {
+  "id": 19,
+  "first_name": "Arlana",
+  "surname": "Blaycock",
+  "email": "ablaycocki@devhub.com",
+  "gender": "Female",
+  "capacity": 16
+}, {
+  "id": 20,
+  "first_name": "Arley",
+  "surname": "Loan",
+  "email": "aloanj@naver.com",
+  "gender": "Male",
+  "capacity": 19
+}]
 
   // "poms": ["Alan Kennedy", "Toby Retallick", "Kay Southam", "Kath Pobee-Norris"]
 

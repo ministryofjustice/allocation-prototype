@@ -1,0 +1,22 @@
+@media screen and (max-width: 768px) {
+  table.responsive thead {
+    display: none;
+  }
+  table.responsive tr {
+    border-bottom: 2px solid $govuk-border-colour;
+    display: block;
+  }
+  table.responsive td {
+    border-bottom: 1px solid $govuk-border-colour;
+    display: block;
+    text-align: right;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  table.responsive td:before {
+    content: attr(aria-label);
+    float: left;
+    font-weight: bold;
+  }
+}

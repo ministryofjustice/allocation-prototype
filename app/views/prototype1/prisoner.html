@@ -7,66 +7,13 @@
 
 {% block content %}
 
-{% set prisoner = data.prisoners[id] %}
+{% set prisoner = data.prisoners | getPrisoner(id) %}
 
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back();"
   }) }}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-      <img src="/public/images/prisoner.png" alt="" width="80%">
-    </div>
-    <div class="govuk-grid-column-two-thirds">
-      <h2 class="govuk-heading-l">{{prisoner | fullName}}</h2>
-
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-third">
-          <span class="govuk-caption-m">Prisoner number</span>
-          <h3 class="govuk-heading-m">{{prisoner.number}}</h3>
-        </div>
-        <div class="govuk-grid-column-one-third">
-          <span class="govuk-caption-m">Date of birth</span>
-          <h3 class="govuk-heading-m">{{prisoner.dob}}</h3>
-        </div>
-        <div class="govuk-grid-column-one-third">
-          <span class="govuk-caption-m">Nationality</span>
-          <h3 class="govuk-heading-m">{{prisoner.nationality}}</h3>
-        </div>
-      </div>
-
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-third">
-          <span class="govuk-caption-m">Release date</span>
-          <h3 class="govuk-heading-m">{{prisoner.release_date}}</h3>
-        </div>
-        <div class="govuk-grid-column-one-third">
-          <span class="govuk-caption-m">Alerts</span>
-          <h3 class="govuk-heading-m"><a href="#">17 active alerts</a></h3>
-        </div>
-        <div class="govuk-grid-column-one-third">
-          <span class="govuk-caption-m">Main offence</span>
-          <h3 class="govuk-heading-m">Xxxxx</h3>
-        </div>
-      </div>
-
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-third">
-          <span class="govuk-caption-m">Case allocation</span>
-          <h3 class="govuk-heading-m">NPS</h3>
-        </div>
-        <div class="govuk-grid-column-one-third">
-          <span class="govuk-caption-m">MAPPA nominal</span>
-          <h3 class="govuk-heading-m">Yes</h3>
-        </div>
-        <div class="govuk-grid-column-one-third">
-          <span class="govuk-caption-m">Category score</span>
-          <h3 class="govuk-heading-m">C</h3>
-        </div>
-      </div>
-
-    </div>
-  </div>
+  {% include "../includes/prisoner_details.html" %}
 
 {% endblock %}
