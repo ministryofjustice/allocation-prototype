@@ -5,6 +5,9 @@
   table.responsive tr {
     border-bottom: 2px solid $govuk-border-colour;
     display: block;
+    > td:last-child {
+      @include govuk-responsive-padding(4, right);
+    }
   }
   table.responsive td {
     border-bottom: 1px solid $govuk-border-colour;

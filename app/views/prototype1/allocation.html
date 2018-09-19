@@ -33,12 +33,12 @@
   <tbody class="govuk-table__body">
     {% for prisoner in prisoners %}
     <tr class="govuk-table__row">
-      <td aria-label="" class="govuk-table__cell" scope="row"><a href="/prototype1/prisoner/{{loop.index0}}">{{prisoner | fullName}}</a></td>
-      <td aria-label="" class="govuk-table__cell" scope="row">{{prisoner.number}}</td>
-      <td aria-label="" class="govuk-table__cell" scope="row">{{prisoner.sentence_calc}}</td>
-      <td aria-label="" class="govuk-table__cell" scope="row">{{prisoner.arrival_date}}</td>
-      <td aria-label="" class="govuk-table__cell" scope="row">{{prisoner.release_date}}</td>
-      <td aria-label="" class="govuk-table__cell">
+      <td aria-label="Prisoner" class="govuk-table__cell" scope="row"><a href="/prototype1/prisoner/{{loop.index0}}">{{prisoner | fullName}}</a></td>
+      <td aria-label="Prisoner number" class="govuk-table__cell" scope="row">{{prisoner.number}}</td>
+      <td aria-label="Sentence calc" class="govuk-table__cell" scope="row">{{prisoner.sentence_calc}}</td>
+      <td aria-label="Arrival date" class="govuk-table__cell" scope="row">{{prisoner.arrival_date}}</td>
+      <td aria-label="Release date" class="govuk-table__cell" scope="row">{{prisoner.release_date}}</td>
+      <td aria-label="Allocate" class="govuk-table__cell">
         <select class="govuk-select" id="pom" name="pom">
           <option value="">Please select</option>
           {% for pom in data.poms %}
