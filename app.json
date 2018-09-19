@@ -1,0 +1,29 @@
+{
+  "name": "allocation-protoype",
+  "description": "OMiC allocation prototype",
+  "repository": "https://github.com/ministryofjustice/allocation-prototype",
+  "env": {
+    "USERNAME": {
+      "required": true
+    },
+    "PASSWORD":{
+      "required": true
+    },
+    "NPM_CONFIG_PRODUCTION": {
+      "required": true 
+    },
+    "YARN_PRODUCTION": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
