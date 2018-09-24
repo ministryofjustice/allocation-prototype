@@ -11,7 +11,7 @@ module.exports = function (env) {
     return person.first_name + ' ' + person.surname
   }
 
-  filters.prisonerName = function(person) {
+  filters.personName = function(person) {
     return person.surname + ', ' + person.first_name
   }
 
