@@ -52,20 +52,22 @@
             <th class="govuk-table__header" scope="col">Arrival date</th>
             <th class="govuk-table__header" scope="col">Release date</th>
             <th class="govuk-table__header" scope="col">Tier</th>
-            <th class="govuk-table__header" scope="col">Status change</th>
+            <th class="govuk-table__header" scope="col">Allocation Date</th>
+            <th class="govuk-table__header" scope="col">POM</th>
             <th class="govuk-table__header" scope="col">Action</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
           {% for prisoner in allocatedPrisoners %}
           <tr class="govuk-table__row">
-            <td aria-label="Prisoner name" class="govuk-table__cell">{{prisoner | prisonerName}}</td>
+            <td aria-label="Prisoner name" class="govuk-table__cell">{{prisoner | personName}}</td>
             <td aria-label="Prisoner number" class="govuk-table__cell ">{{prisoner.number}}</td>
             <td aria-label="Arrival date" class="govuk-table__cell ">{{prisoner.arrival_date}}</td>
             <td aria-label="Release date" class="govuk-table__cell ">{{prisoner.release_date}}</td>
             <td aria-label="Tier" class="govuk-table__cell ">{{prisoner.tier}}</td>
-            <td aria-label="Status change" class="govuk-table__cell ">{{prisoner.status_change}}</td>
-            <td aria-label="Action" class="govuk-table__cell "><a href="/prototype2/prisoner/{{prisoner.id}}">Details</a></td>
+            <td aria-label="Tier" class="govuk-table__cell">{{prisoner.allocation_date}}</td>
+            <td aria-label="POM" class="govuk-table__cell">{{data.poms[prisoner.pomIndex] | personName}}</td>
+            <td aria-label="Action" class="govuk-table__cell "><a href="/prototype2/prisoner/{{prisoner.id}}">Reallocate</a></td>
           </tr>
           {% endfor %}
         </tbody>

@@ -30,7 +30,7 @@
   <tbody class="govuk-table__body">
     {% for prisoner in data['prisoners'] %}
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell" scope="row"><a href="/prototype1/prisoner/{{prisoner.id}}">{{prisoner | prisonerName}}</a></td>
+      <td class="govuk-table__cell" scope="row"><a href="/prototype1/prisoner/{{prisoner.id}}">{{prisoner | personName}}</a></td>
       <td class="govuk-table__cell" scope="row">{{prisoner.number}}</td>
       <td class="govuk-table__cell" scope="row">{{prisoner.sentence_calc}}</td>
       <td class="govuk-table__cell" scope="row">{{prisoner.arrival_date}}</td>
