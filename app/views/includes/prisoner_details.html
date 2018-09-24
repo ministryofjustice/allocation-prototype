@@ -1,19 +1,14 @@
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third">
-    <img src="/public/images/prisoner.png" alt="" width="80%">
+  <div class="govuk-grid-column-one-quarter">
+    <img src="/public/images/prisoner.png" alt="" width="70%">
   </div>
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-three-quarters">
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-l">{{prisoner | prisonerName}}</h2>
-      </div>
       <div class="govuk-grid-column-one-third">
-        <strong class="govuk-tag">NOMIS verified</strong>
+        <span class="govuk-caption-m">Prisoner name</span>
+        <h3 class="govuk-heading-m">{{prisoner | prisonerName}}</h3>
       </div>
-    </div>
-
-    <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
         <span class="govuk-caption-m">Prisoner number</span>
         <h3 class="govuk-heading-m">{{prisoner.number}}</h3>
@@ -22,24 +17,20 @@
         <span class="govuk-caption-m">Date of birth</span>
         <h3 class="govuk-heading-m">{{prisoner.dob}}</h3>
       </div>
-      <div class="govuk-grid-column-one-third">
-        <span class="govuk-caption-m">Nationality</span>
-        <h3 class="govuk-heading-m">{{prisoner.nationality}}</h3>
-      </div>
     </div>
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
-        <span class="govuk-caption-m">Release date</span>
-        <h3 class="govuk-heading-m">{{prisoner.release_date}}</h3>
+        <span class="govuk-caption-m">Nationality</span>
+        <h3 class="govuk-heading-m">{{prisoner.nationality}}</h3>
       </div>
       <div class="govuk-grid-column-one-third">
         <span class="govuk-caption-m">Alerts</span>
         <h3 class="govuk-heading-m"><a href="#">{{prisoner.alerts}} active alerts</a></h3>
       </div>
       <div class="govuk-grid-column-one-third">
-        <span class="govuk-caption-m">Main offence</span>
-        <h3 class="govuk-heading-m">Sexual activity with a female child under 16</h3>
+        <span class="govuk-caption-m">Release date</span>
+        <h3 class="govuk-heading-m">{{prisoner.release_date}}</h3>
       </div>
     </div>
 
@@ -58,5 +49,19 @@
       </div>
     </div>
 
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">Main offence</span>
+        <h3 class="govuk-heading-m">Sexual activity with a female child under 16</h3>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">Prisoner allocation</span>
+        <h3 class="govuk-heading-m">Probation POM</h3>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">Key worker</span>
+        <h3 class="govuk-heading-m">Stringer Bell</h3>
+      </div>
+    </div>
   </div>
 </div>
