@@ -1,0 +1,54 @@
+{% extends "prototype2/layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% set poms = data.poms %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl">Prisoner Offender Managers</h1>
+
+{{ govukButton({
+  text: "Add new POM"
+}) }}
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col">POM name</th>
+      <th class="govuk-table__header govuk-table__header" scope="col">Type</th>
+      <th class="govuk-table__header govuk-table__header" scope="col">Tier A
+        cases</th>
+      <th class="govuk-table__header govuk-table__header" scope="col">Tier B
+        cases</th>
+      <th class="govuk-table__header govuk-table__header" scope="col">Tier C
+        cases</th>
+      <th class="govuk-table__header govuk-table__header" scope="col">Tier D
+        cases</th>
+      <th class="govuk-table__header govuk-table__header" scope="col">Total</th>
+      <th class="govuk-table__header govuk-table__header" scope="col">Working
+        pattern</th>
+      <th class="govuk-table__header govuk-table__header" scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    {% for pom in poms %}
+    <tr class="govuk-table__row">
+      <td aria-label="POM name" class="govuk-table__cell">{{ pom.first_name }} {{
+        pom.surname }}</td>
+      <td aria-label="POM type" class="govuk-table__cell">{{ pom.type }}</td>
+      <td aria-label="POM tier A cases" class="govuk-table__cell">{{ pom.tier_a }}</td>
+      <td aria-label="POM tier B cases" class="govuk-table__cell">{{ pom.tier_b }}</td>
+      <td aria-label="POM tier C cases" class="govuk-table__cell">{{ pom.tier_c }}</td>
+      <td aria-label="POM tier D cases" class="govuk-table__cell">{{ pom.tier_d }}</td>
+      <td aria-label="Total cases" class="govuk-table__cell">{{ pom.total }}</td>
+      <td aria-label="Working pattern" class="govuk-table__cell">{{ pom.working_pattern }}</td>
+      <td aria-label="Status" class="govuk-table__cell">{{ pom.status }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
