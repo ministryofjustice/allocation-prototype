@@ -85,6 +85,7 @@ router.get('/prototype2/allocatepom', function (req, res) {
 
 function allocatePom(req, prisonerIndex, pomIndex) {
   req.session.data.prisoners[prisonerIndex].allocated = true
+  req.session.data.prisoners[prisonerIndex].allocation_date = (new Date()).toLocaleDateString('en-GB')
   req.session.data.prisoners[prisonerIndex].pomIndex = parseInt(pomIndex)
 }
 

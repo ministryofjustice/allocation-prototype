@@ -48,7 +48,9 @@ module.exports = {
     "release_date": "03/01/2018",
     "tier": "C",
     "status_change": "19/09/2018",
-    "allocated": true
+    "allocated": true,
+    "allocation_date": "05/01/2018",
+    "pomIndex": 2
   }, {
     "id": "3",
     "first_name": "Briano",
@@ -118,7 +120,9 @@ module.exports = {
     "release_date": "03/01/2018",
     "tier": "B",
     "status_change": "26/09/2018",
-    "allocated": true
+    "allocated": true,
+    "allocation_date": "05/01/2018",
+    "pomIndex": 3
   }, {
     "id": "8",
     "first_name": "Sollie",
@@ -146,7 +150,9 @@ module.exports = {
     "release_date": "02/01/2018",
     "tier": "D",
     "status_change": "25/09/2018",
-    "allocated": true
+    "allocated": true,
+    "allocation_date": "05/01/2018",
+    "pomIndex": 8
   }, {
     "id": "10",
     "first_name": "Hasty",
@@ -202,7 +208,9 @@ module.exports = {
     "release_date": "03/01/2018",
     "tier": "B",
     "status_change": "17/09/2018",
-    "allocated": true
+    "allocated": true,
+    "allocation_date": "05/01/2018",
+    "pomIndex": 3
   }, {
     "id": "14",
     "first_name": "Rodolph",
@@ -216,7 +224,9 @@ module.exports = {
     "release_date": "04/01/2018",
     "tier": "A",
     "status_change": "25/09/2018",
-    "allocated": true
+    "allocated": true,
+    "allocation_date": "05/01/2018",
+    "pomIndex": 9
   }, {
     "id": "15",
     "first_name": "Craggie",
@@ -230,7 +240,9 @@ module.exports = {
     "release_date": null,
     "tier": "D",
     "status_change": "25/09/2018",
-    "allocated": true
+    "allocated": true,
+    "allocation_date": "05/01/2018",
+    "pomIndex": 7
   }, {
     "id": "16",
     "first_name": "Putnem",
@@ -328,7 +340,9 @@ module.exports = {
     "release_date": null,
     "tier": "A",
     "status_change": "24/09/2018",
-    "allocated": true
+    "allocation_date": "05/01/2018",
+    "allocated": true,
+    "pomIndex": 2
   }, {
     "id": "23",
     "first_name": "Kele",
@@ -356,7 +370,9 @@ module.exports = {
     "release_date": "04/01/2018",
     "tier": "D",
     "status_change": "25/09/2018",
-    "allocated": true
+    "allocated": true,
+    "allocation_date": "05/01/2018",
+    "pomIndex": 5
   }, {
     "id": "25",
     "first_name": "Farr",
@@ -384,7 +400,9 @@ module.exports = {
     "release_date": "06/01/2018",
     "tier": "B",
     "status_change": "21/09/2018",
-    "allocated": true
+    "allocated": true,
+    "allocation_date": "05/01/2018",
+    "pomIndex": 6
   }, {
     "id": "27",
     "first_name": "Timothy",
@@ -453,6 +471,7 @@ module.exports = {
       "tier_a": 5,
       "tier_b": 13,
       "tier_c": 1,
+      "tier_d": 0,
       "total": 19,
       "working_pattern": "Full time",
       "status": "Active"
@@ -467,6 +486,7 @@ module.exports = {
       "tier_a": 0,
       "tier_b": 0,
       "tier_c": 0,
+      "tier_d": 0,
       "total": 0,
       "working_pattern": "Full time",
       "status": "Inactive"
@@ -481,6 +501,7 @@ module.exports = {
       "tier_a": 0,
       "tier_b": 0,
       "tier_c": 0,
+      "tier_d": 0,
       "total": 0,
       "working_pattern": "Part Time",
       "status": "Inactive"
@@ -495,6 +516,7 @@ module.exports = {
       "tier_a": 3,
       "tier_b": 10,
       "tier_c": 1,
+      "tier_d": 0,
       "total": 14,
       "working_pattern": "Full time",
       "status": "Active"
@@ -509,6 +531,7 @@ module.exports = {
       "tier_a": 3,
       "tier_b": 4,
       "tier_c": 17,
+      "tier_d": 0,
       "total": 24,
       "working_pattern": "Full time",
       "status": "Active"
@@ -523,6 +546,7 @@ module.exports = {
       "tier_a": 7,
       "tier_b": 8,
       "tier_c": 11,
+      "tier_d": 0,
       "total": 26,
       "working_pattern": "Full time",
       "status": "Active"
@@ -537,6 +561,7 @@ module.exports = {
       "tier_a": 2,
       "tier_b": 2,
       "tier_c": 9,
+      "tier_d": 0,
       "total": 13,
       "working_pattern": "Part Time - 0.8",
       "status": "Active"
@@ -551,6 +576,7 @@ module.exports = {
       "tier_a": 3,
       "tier_b": 8,
       "tier_c": 7,
+      "tier_d": 0,
       "total": 18,
       "working_pattern": "Full time",
       "status": "Active"
@@ -565,6 +591,7 @@ module.exports = {
       "tier_a": 3,
       "tier_b": 4,
       "tier_c": 14,
+      "tier_d": 0,
       "total": 21,
       "working_pattern": "Full time",
       "status": "Active"
@@ -579,6 +606,7 @@ module.exports = {
       "tier_a": 7,
       "tier_b": 0,
       "tier_c": 14,
+      "tier_d": 0,
       "total": 21,
       "working_pattern": "Full time",
       "status": "Active"
@@ -593,6 +621,7 @@ module.exports = {
       "tier_a": 0,
       "tier_b": 2,
       "tier_c": 4,
+      "tier_d": 0,
       "total": 6,
       "working_pattern": "Part Time - 0.2",
       "status": "Active"
@@ -607,6 +636,7 @@ module.exports = {
       "tier_a": 4,
       "tier_b": 5,
       "tier_c": 1,
+      "tier_d": 0,
       "total": 10,
       "working_pattern": "Full time",
       "status": "Active"
@@ -621,6 +651,7 @@ module.exports = {
       "tier_a": 8,
       "tier_b": 13,
       "tier_c": 9,
+      "tier_d": 0,
       "total": 30,
       "working_pattern": "Full time",
       "status": "Active"
@@ -635,6 +666,7 @@ module.exports = {
       "tier_a": 0,
       "tier_b": 3,
       "tier_c": 7,
+      "tier_d": 0,
       "total": 10,
       "working_pattern": "Full time",
       "status": "Active"
@@ -649,6 +681,7 @@ module.exports = {
       "tier_a": 3,
       "tier_b": 7,
       "tier_c": 16,
+      "tier_d": 0,
       "total": 26,
       "working_pattern": "Part Time - 0.4",
       "status": "Active"
@@ -663,6 +696,7 @@ module.exports = {
       "tier_a": 2,
       "tier_b": 5,
       "tier_c": 14,
+      "tier_d": 0,
       "total": 21,
       "working_pattern": "Full time",
       "status": "Active"
@@ -677,6 +711,7 @@ module.exports = {
       "tier_a": 6,
       "tier_b": 4,
       "tier_c": 15,
+      "tier_d": 0,
       "total": 25,
       "working_pattern": "Full time",
       "status": "Active"
@@ -691,6 +726,7 @@ module.exports = {
       "tier_a": 3,
       "tier_b": 1,
       "tier_c": 16,
+      "tier_d": 0,
       "total": 20,
       "working_pattern": "Full time",
       "status": "Active"
@@ -705,6 +741,7 @@ module.exports = {
       "tier_a": 3,
       "tier_b": 4,
       "tier_c": 15,
+      "tier_d": 0,
       "total": 22,
       "working_pattern": "Full time",
       "status": "Active"
@@ -719,6 +756,7 @@ module.exports = {
       "tier_a": 2,
       "tier_b": 1,
       "tier_c": 1,
+      "tier_d": 0,
       "total": 4,
       "working_pattern": "Full time",
       "status": "Active"
