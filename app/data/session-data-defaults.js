@@ -48,7 +48,9 @@ module.exports = {
     "release_date": "03/01/2018",
     "tier": "C",
     "status_change": "19/09/2018",
-    "allocated": true
+    "allocated": true,
+    "allocation_date": "05/01/2018",
+    "pomIndex": 2
   }, {
     "id": "3",
     "first_name": "Briano",
@@ -118,7 +120,9 @@ module.exports = {
     "release_date": "03/01/2018",
     "tier": "B",
     "status_change": "26/09/2018",
-    "allocated": true
+    "allocated": true,
+    "allocation_date": "05/01/2018",
+    "pomIndex": 3
   }, {
     "id": "8",
     "first_name": "Sollie",
@@ -146,7 +150,9 @@ module.exports = {
     "release_date": "02/01/2018",
     "tier": "D",
     "status_change": "25/09/2018",
-    "allocated": true
+    "allocated": true,
+    "allocation_date": "05/01/2018",
+    "pomIndex": 8
   }, {
     "id": "10",
     "first_name": "Hasty",
@@ -202,7 +208,9 @@ module.exports = {
     "release_date": "03/01/2018",
     "tier": "B",
     "status_change": "17/09/2018",
-    "allocated": true
+    "allocated": true,
+    "allocation_date": "05/01/2018",
+    "pomIndex": 3
   }, {
     "id": "14",
     "first_name": "Rodolph",
@@ -216,7 +224,9 @@ module.exports = {
     "release_date": "04/01/2018",
     "tier": "A",
     "status_change": "25/09/2018",
-    "allocated": true
+    "allocated": true,
+    "allocation_date": "05/01/2018",
+    "pomIndex": 9
   }, {
     "id": "15",
     "first_name": "Craggie",
@@ -230,7 +240,9 @@ module.exports = {
     "release_date": null,
     "tier": "D",
     "status_change": "25/09/2018",
-    "allocated": true
+    "allocated": true,
+    "allocation_date": "05/01/2018",
+    "pomIndex": 7
   }, {
     "id": "16",
     "first_name": "Putnem",
@@ -328,7 +340,9 @@ module.exports = {
     "release_date": null,
     "tier": "A",
     "status_change": "24/09/2018",
-    "allocated": true
+    "allocation_date": "05/01/2018",
+    "allocated": true,
+    "pomIndex": 2
   }, {
     "id": "23",
     "first_name": "Kele",
@@ -356,7 +370,9 @@ module.exports = {
     "release_date": "04/01/2018",
     "tier": "D",
     "status_change": "25/09/2018",
-    "allocated": true
+    "allocated": true,
+    "allocation_date": "05/01/2018",
+    "pomIndex": 5
   }, {
     "id": "25",
     "first_name": "Farr",
@@ -384,7 +400,9 @@ module.exports = {
     "release_date": "06/01/2018",
     "tier": "B",
     "status_change": "21/09/2018",
-    "allocated": true
+    "allocated": true,
+    "allocation_date": "05/01/2018",
+    "pomIndex": 6
   }, {
     "id": "27",
     "first_name": "Timothy",
