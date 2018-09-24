@@ -60,7 +60,7 @@
         <tbody class="govuk-table__body">
           {% for prisoner in allocatedPrisoners %}
           <tr class="govuk-table__row">
-            <td aria-label="Prisoner name" class="govuk-table__cell">{{prisoner | personName}}</td>
+            <td aria-label="Action" class="govuk-table__cell "><a href="/prototype2/prisoner_info/{{prisoner.id}}">{{prisoner | personName}}</a></td>
             <td aria-label="Prisoner number" class="govuk-table__cell ">{{prisoner.number}}</td>
             <td aria-label="Arrival date" class="govuk-table__cell ">{{prisoner.arrival_date}}</td>
             <td aria-label="Release date" class="govuk-table__cell ">{{prisoner.release_date}}</td>
@@ -92,7 +92,7 @@
         <tbody class="govuk-table__body">
           {% for prisoner in unallocatedPrisoners %}
           <tr class="govuk-table__row">
-            <td aria-label="Prisoner name" class="govuk-table__cell">{{prisoner | personName}}</td>
+            <td aria-label="Action" class="govuk-table__cell "><a href="/prototype2/prisoner_info/{{prisoner.id}}">{{prisoner | personName}}</a></td>
             <td aria-label="Prisoner number" class="govuk-table__cell ">{{prisoner.number}}</td>
             <td aria-label="Arrival date" class="govuk-table__cell ">{{prisoner.arrival_date}}</td>
             <td aria-label="Release date" class="govuk-table__cell ">{{prisoner.release_date}}</td>
@@ -122,7 +122,7 @@
         <tbody class="govuk-table__body">
           {% for prisoner in untieredPrisoners %}
           <tr class="govuk-table__row">
-            <td aria-label="Prisoner name" class="govuk-table__cell">{{prisoner | personName}}</td>
+            <td aria-label="Action" class="govuk-table__cell "><a href="/prototype2/prisoner_info/{{prisoner.id}}">{{prisoner | personName}}</a></td>
             <td aria-label="Prisoner number" class="govuk-table__cell ">{{prisoner.number}}</td>
             <td aria-label="Arrival date" class="govuk-table__cell ">{{prisoner.arrival_date}}</td>
             <td aria-label="Release date" class="govuk-table__cell ">{{prisoner.release_date}}</td>
@@ -150,7 +150,7 @@
         <tbody class="govuk-table__body">
           {% for prisoner in unprocessedPrisoners %}
           <tr class="govuk-table__row">
-            <td aria-label="Prisoner name" class="govuk-table__cell">{{prisoner | personName}}</td>
+            <td aria-label="Action" class="govuk-table__cell "><a href="/prototype2/prisoner_info/{{prisoner.id}}">{{prisoner | personName}}</a></td>
             <td aria-label="Prisoner number" class="govuk-table__cell ">{{prisoner.number}}</td>
             <td aria-label="Arrival date" class="govuk-table__cell ">{{prisoner.arrival_date}}</td>
             <td aria-label="Release date" class="govuk-table__cell ">&nbsp;</td>

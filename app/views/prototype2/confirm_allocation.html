@@ -1,0 +1,28 @@
+{% extends "prototype2/layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back();"
+}) }}
+
+{% set prisoner = data.prisoners | getPrisoner(prisoner_id) %}
+{% set pom =  data.poms | getPom(pom_id) %}
+
+<h1 class="govuk-heading-l">Confirm allocation</h1>
+
+<h3 class="govuk-heading-s">You are assigning {{prisoner | personName}} to {{pom | personName}}</h3>
+
+<h3 class="govuk-heading-s">We'll email {{pom.first_name}} {{pom.surname}} at {{pom.email}}
+  to let them know about their new allocation</h3>
+
+  {{ govukButton({
+    text: "Complete allocation"
+  }) }}
+
+{% endblock %}

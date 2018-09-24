@@ -1,14 +1,7 @@
 const express = require('express')
 const router = express.Router()
-var Prisoners
 
 // Add your routes here - above the module.exports line
-
-router.get('/', function (req, res) {
-  req.session.data['logged_in'] = false
-  Prisoners = req.session.data.prisoners
-  res.render('index')
-})
 
 router.get('/prototype1/', function (req, res) {
   let loggedIn = req.session.data['logged_in']
@@ -68,6 +61,14 @@ router.get('/prototype2/tiering-result/:id', function (req, res) {
 
 router.get('/prototype2/prisoner/:id', function (req, res) {
   res.render('prototype2/prisoner', {'id': req.params.id})
+})
+
+router.get('/prototype2/prisoner_info/:id', function (req, res) {
+  res.render('prototype2/prisoner_info', {'id': req.params.id})
+})
+
+router.get('/prototype2/confirm_allocation/:prisoner_id/:pom_id', function (req, res) {
+  res.render('prototype2/confirm_allocation', {'prisoner_id': req.params.prisoner_id, 'pom_id': req.params.pom_id})
 })
 
 router.get('/login_error', function (req, res) {
