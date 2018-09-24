@@ -6,5 +6,11 @@ if (window.console && window.console.info) {
 }
 
 $(document).ready(function () {
-  window.GOVUKFrontend.initAll()
+  $(".tablesorter").tablesorter({
+    cssAsc: 'tablesorter-header-asc',
+    cssDesc: 'tablesorter-header-desc',
+    cssNone: 'tablesorter-header-none'
+  });
+  window.GOVUKFrontend.initAll();
+
 })
