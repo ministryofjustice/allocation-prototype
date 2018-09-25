@@ -1,0 +1,123 @@
+{% extends "prototype2/layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% set pom = data.poms[id] %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back();"
+  }) }}
+
+<h1 class="govuk-heading-xl">POM Information</h1>
+
+<!-- POM summary -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <img src="/public/images/prisoner.png" alt="" width="70%">
+  </div>
+  <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">POM name</span>
+        <h3 class="govuk-heading-m">{{pom | personName}}</h3>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">POM level</span>
+        <h3 class="govuk-heading-m">{{pom.type}}</h3>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">Working Pattern</span>
+        <h3 class="govuk-heading-m">{{pom.working_pattern}}</h3>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">Contact email address</span>
+        <h3 class="govuk-heading-m">{{pom.email}}</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Spacer -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div style="height: 80px;"></div>
+  </div>
+</div>
+
+<!-- Cases & Notes table -->
+<div class="govuk-grid-row">
+<div class="govuk-tabs" data-module="tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#cases">
+        Cases
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#notes">
+        Notes
+      </a>
+    </li>
+  </ul>
+
+  <section class="govuk-tabs__panel" id="cases">
+    <h2 class="govuk-heading-l">Cases</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Prisoner Name</th>
+          <th class="govuk-table__header" scope="col">Prisoner Number</th>
+          <th class="govuk-table__header" scope="col">Arrival Date</th>
+          <th class="govuk-table__header" scope="col">Release Date</th>
+          <th class="govuk-table__header" scope="col">Tier</th>
+          <th class="govuk-table__header" scope="col">Allocation date</th>
+          <th class="govuk-table__header" scope="col">Role</th>
+          <th class="govuk-table__header" scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Bob Smith</td>
+          <td class="govuk-table__cell">1234567</td>
+          <td class="govuk-table__cell">12/12/12</td>
+          <td class="govuk-table__cell">24/01/78</td>
+          <td class="govuk-table__cell">A</td>
+          <td class="govuk-table__cell">12/09/18</td>
+          <td class="govuk-table__cell">Responsible</td>
+          <td class="govuk-table__cell"><a href="">Reallocate</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </section>
+  <section class="govuk-tabs__panel" id="notes">
+    <h2 class="govuk-heading-l">Notes</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Date</th>
+          <th class="govuk-table__header" scope="col">Notes</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">12/09/2018</td>
+          <td class="govuk-table__cell">Something interesting happened</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+</div>
+{% endblock %}
