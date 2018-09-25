@@ -53,6 +53,10 @@ router.get('/prototype1/pom/:id', function (req, res) {
   res.render('prototype1/pom', {'id': req.params.id})
 })
 
+router.get('/prototype2/pom/:id', function(req, res) {
+  res.render('prototype2/pom', {'id': req.params.id})
+})
+
 router.get('/prototype2/tiering/:id', function (req, res) {
   res.render('prototype2/tiering', {'id': req.params.id})
 })
