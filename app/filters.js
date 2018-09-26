@@ -37,6 +37,12 @@ module.exports = function (env) {
     });
   }
 
+  filters.getPom = function(poms, pomID) {
+    return poms.find(function(pom) {
+      return pom.id === parseInt(pomID);
+    });
+  }
+
 
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:

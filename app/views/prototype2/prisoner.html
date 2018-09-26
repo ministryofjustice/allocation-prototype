@@ -41,7 +41,7 @@
     <tbody class="govuk-table__body">
       {% for pom in poms %}
       <tr class="govuk-table__row">
-        <td aria-label="POM name" class="govuk-table__cell ">{{pom.first_name}} {{pom.surname}}</td>
+        <td aria-label="POM name" class="govuk-table__cell ">{{pom | personName}} </td>
         <td aria-label="Type" class="govuk-table__cell">{{pom.type}}</td>
         <td aria-label="Tier A cases" class="govuk-table__cell">{{pom.tier_a}}</td>
         <td aria-label="Tier B cases" class="govuk-table__cell ">{{pom.tier_b}}</td>
@@ -49,7 +49,7 @@
         <td aria-label="Tier D cases" class="govuk-table__cell ">{{pom.tier_d}}</td>
         <td aria-label="Total" class="govuk-table__cell ">{{pom.total}}</td>
         <td aria-label="Working pattern" class="govuk-table__cell ">{{pom.working_pattern}}</td>
-        <td aria-label="Action" class="govuk-table__cell "><a href="/prototype2/prisoner/{{prisoner.id}}">Select</a></td>
+        <td aria-label="Action" class="govuk-table__cell "><a href="/prototype2/confirm_allocation/{{prisoner.id}}/{{pom.id}}">Select</a></td>
       </tr>
       {% endfor %}
     </tbody>
@@ -57,9 +57,7 @@
 
   <h5 class="govuk-heading-s"><a href="/prototype2/tiering/{{prisoner.id}}">Amend prisoner's tiering and allocation information</a></h5>
 
-        {{ govukButton({
-          text: "+ Supporting POM"
-        }) }}
+        <p><a href="#" role="button" class="button-secondary">+ Supporting POM</a></p>
 
         <hr class="govuk-section-break govuk-section-break--invisible">
 
