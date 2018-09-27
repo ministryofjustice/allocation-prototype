@@ -6,6 +6,26 @@
 
 {% set prisoner = data.prisoners | getPrisoner(id) %}
 
+{% macro checked_attr(prisoner, pomType) %}
+  {% if(prisoner.pom_type == pomType) %}
+    {{"checked"}}
+  {% endif %}
+{% endmacro %}
+
+{% macro conditional_override(prisoner, type) %}
+  {% if(prisoner.pom_type != type) %}
+    {{ 'data-aria-controls=conditional-allocate-conditional-1' -}}
+  {% endif %}
+{% endmacro %}
+
+{% macro pom_type_recommendation(prisoner) %}
+  {% if(prisoner.pom_type == "Prison-POM") %}
+    {{"Prison Staff Prisoner Offender Manager (POM)"}}
+  {% else %}
+    {{"Probation Staff Prisoner Offender Manager (POM)"}}
+  {% endif %}
+{% endmacro %}
+
 {% block content %}
 
   {{ govukBackLink({
@@ -21,10 +41,11 @@
       <br/>Tier calculation
     </h1>
     <div class="govuk-panel__body">
-      We recommend {{prisoner | fullName}} is allocated to a Prison Staff Prisoner Officer Manager (POM)
+      {{prisoner | fullName}} should be allocated to a Prison Staff Prisoner Officer Manager (POM)
     </div>
   </div>
 
+  <form action='/prototype2/confirm_tiering/{{prisoner.id}}' method="post">
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend">
@@ -34,18 +55,18 @@
       </legend>
       <div class="govuk-radios" data-module="radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="allocate-conditional-1" name="allocate" type="radio" value="email" data-aria-controls="conditional-allocate-conditional-1">
+          <input {{checked_attr(prisoner, "Probation-POM")}} class="govuk-radios__input" id="allocate-conditional-1" name="allocate" type="radio" value="Probation-POM" {{ conditional_override(prisoner, "Probation-POM") }}>
           <label class="govuk-label govuk-radios__label" for="allocate-conditional-1">
             Probation officer POM
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input checked class="govuk-radios__input" id="allocate-conditional-2" name="allocate" type="radio" value="phone" data-aria-controls="conditional-allocate-conditional-2">
+          <input {{checked_attr(prisoner, "Prison-POM")}} class="govuk-radios__input" id="allocate-conditional-2" name="allocate" type="radio" value="Prison-POM" {{ conditional_override(prisoner, "Prison-POM") }}>
           <label class="govuk-label govuk-radios__label" for="allocate-conditional-2">
             Prison staff POM
           </label>
         </div>
-        <div class="govuk-radios__conditional--hidden" id="conditional-allocate-conditional-1">
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-allocate-conditional-1">
           {{ govukCheckboxes({
             idPrefix: "reasons",
             name: "reasons",
@@ -79,10 +100,8 @@
     </fieldset>
   </div>
 
-  {{ govukButton({
-    text: "Complete",
-    href: "/prototype2/allocations#awaiting-allocation"
-  }) }}
+  {{ govukButton({ text: "Complete" }) }}
+  </form>
 
 
 
