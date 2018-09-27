@@ -76,8 +76,14 @@ router.get('/logout', function (req, res) {
   res.redirect('/')
 })
 
-router.get('/prototype2/confirm_allocation/:prisoner_id/:pom_id', function (req, res) {
-  res.render('prototype2/confirm_allocation', {'prisoner_id': req.params.prisoner_id, 'pom_id': req.params.pom_id})
+router.post('/prototype2/confirm-allocation/:prisoner_id', function (req, res) {
+  res.render(
+    'prototype2/confirm_allocation',
+    {
+      'prisoner_id': req.params.prisoner_id,
+      'pom_id': req.session.data['allocation']['pom_id']
+    }
+  )
 })
 
 router.get('/prototype2/allocatepom/:prisoner_id/:pom_id', function (req, res) {
