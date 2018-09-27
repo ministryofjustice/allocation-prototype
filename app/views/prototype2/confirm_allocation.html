@@ -21,8 +21,8 @@
 <h3 class="govuk-heading-s">We'll email {{pom.first_name}} {{pom.surname}} at {{pom.email}}
   to let them know about their new allocation</h3>
 
-  {{ govukButton({
-    text: "Complete allocation"
-  }) }}
+  <a href="/prototype2/allocatePom/{{prisoner.id}}/{{pom.id}}" role="button" class="govuk-button govuk-button--start">
+    Complete alllocation
+  </a>
 
 {% endblock %}
