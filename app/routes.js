@@ -84,7 +84,7 @@ router.get('/prototype2/allocatepom/:prisoner_id/:pom_id', function (req, res) {
   let prisonerIndex = getPrisonerIndex(req, req.params.prisoner_id)
   let pomIndex = getPomIndex(req, req.params.pom_id)
   allocatePom(req, prisonerIndex, pomIndex);
-  res.redirect('/prototype2/allocations')
+  res.redirect('/prototype2/allocations#awaiting-allocation')
 })
 
 function allocatePom(req, prisonerIndex, pomIndex) {
