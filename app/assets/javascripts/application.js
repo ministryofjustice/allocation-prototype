@@ -11,6 +11,10 @@ $(document).ready(function () {
     cssDesc: 'tablesorter-header-desc',
     cssNone: 'tablesorter-header-none'
   });
-  window.GOVUKFrontend.initAll();
 
+  $(".table-sorter__link").click(function (e) {
+    e.preventDefault();
+  });
+
+  window.GOVUKFrontend.initAll();
 })
