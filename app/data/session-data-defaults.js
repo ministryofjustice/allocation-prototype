@@ -33,6 +33,7 @@ module.exports = {
     "arrival_date": "05/01/2018",
     "release_date": "02/01/2018",
     "tier": "D",
+    "pom_type": "Probation-POM",
     "status_change": "26/09/2018",
     "allocated": false
   }, {
@@ -49,6 +50,7 @@ module.exports = {
     "tier": "C",
     "status_change": "19/09/2018",
     "allocated": true,
+    "pom_type": "Prison-POM",
     "allocation_date": "05/01/2018",
     "pomIndex": 2
   }, {
@@ -77,6 +79,7 @@ module.exports = {
     "arrival_date": "05/01/2018",
     "release_date": "08/01/2018",
     "tier": "B",
+    "pom_type": "Probation-POM",
     "status_change": "27/09/2018",
     "allocated": false
   }, {
@@ -91,6 +94,7 @@ module.exports = {
     "arrival_date": "03/01/2018",
     "release_date": null,
     "tier": "C",
+    "pom_type": "Probation-POM",
     "status_change": "03/09/2018",
     "allocated": null
   }, {
@@ -105,6 +109,7 @@ module.exports = {
     "arrival_date": "06/01/2018",
     "release_date": "06/01/2018",
     "tier": "C",
+    "pom_type": "Probation-POM",
     "status_change": "25/09/2018",
     "allocated": null
   }, {
@@ -119,6 +124,7 @@ module.exports = {
     "arrival_date": "08/01/2018",
     "release_date": "03/01/2018",
     "tier": "B",
+    "pom_type": "Prison-POM",
     "status_change": "26/09/2018",
     "allocated": true,
     "allocation_date": "05/01/2018",
@@ -135,6 +141,7 @@ module.exports = {
     "arrival_date": "09/01/2018",
     "release_date": "01/01/2018",
     "tier": "A",
+    "pom_type": "Prisoner-POM",
     "status_change": "10/09/2018",
     "allocated": false
   }, {
@@ -149,6 +156,7 @@ module.exports = {
     "arrival_date": "05/01/2018",
     "release_date": "02/01/2018",
     "tier": "D",
+    "pom_type": "Prison-POM",
     "status_change": "25/09/2018",
     "allocated": true,
     "allocation_date": "05/01/2018",
@@ -165,6 +173,7 @@ module.exports = {
     "arrival_date": "02/01/2018",
     "release_date": null,
     "tier": "B",
+    "pom_type": "Prison-POM",
     "status_change": "01/09/2018",
     "allocated": null
   }, {
@@ -207,6 +216,7 @@ module.exports = {
     "arrival_date": "07/01/2018",
     "release_date": "03/01/2018",
     "tier": "B",
+    "pom_type": "Prison-POM",
     "status_change": "17/09/2018",
     "allocated": true,
     "allocation_date": "05/01/2018",
@@ -223,6 +233,7 @@ module.exports = {
     "arrival_date": "03/01/2018",
     "release_date": "04/01/2018",
     "tier": "A",
+    "pom_type": "Prison-POM",
     "status_change": "25/09/2018",
     "allocated": true,
     "allocation_date": "05/01/2018",
@@ -239,6 +250,7 @@ module.exports = {
     "arrival_date": "07/01/2018",
     "release_date": null,
     "tier": "D",
+    "pom_type": "Prison-POM",
     "status_change": "25/09/2018",
     "allocated": true,
     "allocation_date": "05/01/2018",
@@ -255,6 +267,7 @@ module.exports = {
     "arrival_date": "09/01/2018",
     "release_date": null,
     "tier": "D",
+    "pom_type": "Prison-POM",
     "status_change": "11/09/2018",
     "allocated": false
   }, {
@@ -283,6 +296,7 @@ module.exports = {
     "arrival_date": "03/01/2018",
     "release_date": "04/01/2018",
     "tier": "C",
+    "pom_type": "Prison-POM",
     "status_change": "14/09/2018",
     "allocated": false
   }, {
@@ -297,6 +311,7 @@ module.exports = {
     "arrival_date": "04/01/2018",
     "release_date": "01/01/2018",
     "tier": "C",
+    "pom_type": "Prison-POM",
     "status_change": "04/09/2018",
     "allocated": null
   }, {
@@ -339,6 +354,7 @@ module.exports = {
     "arrival_date": "05/01/2018",
     "release_date": null,
     "tier": "A",
+    "pom_type": "Prison-POM",
     "status_change": "24/09/2018",
     "allocation_date": "05/01/2018",
     "allocated": true,
@@ -369,6 +385,7 @@ module.exports = {
     "arrival_date": "07/01/2018",
     "release_date": "04/01/2018",
     "tier": "D",
+    "pom_type": "Prison-POM",
     "status_change": "25/09/2018",
     "allocated": true,
     "allocation_date": "05/01/2018",
@@ -399,6 +416,7 @@ module.exports = {
     "arrival_date": "05/01/2018",
     "release_date": "06/01/2018",
     "tier": "B",
+    "pom_type": "Prison-POM",
     "status_change": "21/09/2018",
     "allocated": true,
     "allocation_date": "05/01/2018",
@@ -457,6 +475,7 @@ module.exports = {
     "arrival_date": "03/01/2018",
     "release_date": "02/01/2018",
     "tier": "B",
+    "pom_type": "Prison-POM",
     "status_change": "13/09/2018",
     "allocated": false
   }],

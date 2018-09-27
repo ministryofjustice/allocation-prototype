@@ -9,7 +9,7 @@
 
 {% set prisoner = data.prisoners | getPrisoner(id) %}
 {% set allocatedPOM = data.poms[prisoner.pomIndex] %}
-{% set poms = data.poms %}
+{% set poms = data.poms | pomsByType(prisoner.pom_type) %}
 
   {{ govukBackLink({
     text: "Back",

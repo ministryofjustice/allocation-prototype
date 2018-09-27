@@ -31,6 +31,10 @@ module.exports = function (env) {
     return prisoners.filter(prisoner => !prisoner.release_date);
   }
 
+  filters.pomsByType = function(poms, type) {
+    return poms.filter(pom => pom.type == type)
+  }
+
   filters.getPrisoner = function(prisoners, prisonerID) {
     return prisoners.find(function(prisoner) {
       return prisoner.id === prisonerID;
