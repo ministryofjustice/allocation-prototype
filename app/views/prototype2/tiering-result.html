@@ -18,6 +18,14 @@
   {% endif %}
 {% endmacro %}
 
+{% macro pom_type_recommendation(prisoner) %}
+  {% if(prisoner.pom_type == "Prison-POM") %}
+    {{"Prison Staff Prisoner Offender Manager (POM)"}}
+  {% else %}
+    {{"Probation Staff Prisoner Offender Manager (POM)"}}
+  {% endif %}
+{% endmacro %}
+
 {% block content %}
 
   {{ govukBackLink({
@@ -33,7 +41,7 @@
       <br/>Tier calculation
     </h1>
     <div class="govuk-panel__body">
-      We recommend {{prisoner | fullName}} is allocated to a Prison Staff Prisoner Officer Manager (POM)
+      {{prisoner | fullName}} should be allocated to a Prison Staff Prisoner Officer Manager (POM)
     </div>
   </div>
 
