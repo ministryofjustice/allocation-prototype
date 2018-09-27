@@ -47,7 +47,8 @@ router.get('/prototype1/pom/:id', function (req, res) {
 })
 
 router.get('/prototype2/pom/:id', function(req, res) {
-  res.render('prototype2/pom', {'id': req.params.id})
+  let pomIndex = getPomIndex(req, req.params.id)
+  res.render('prototype2/pom', {'pomIndex': pomIndex})
 })
 
 router.get('/prototype2/tiering/:id', function (req, res) {
@@ -65,6 +66,10 @@ router.get('/prototype2/prisoner/:id', function (req, res) {
 
 router.get('/prototype2/prisoner_info/:id', function (req, res) {
   res.render('prototype2/prisoner_info', {'id': req.params.id})
+})
+
+router.get('/new_email', function (req, res) {
+  res.render('prototype2/new_email')
 })
 
 router.get('/login_error', function (req, res) {

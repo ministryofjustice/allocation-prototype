@@ -15,23 +15,28 @@
 
   <h1 class="govuk-heading-l">Tiering for {{prisoner | personName}} ({{prisoner.number}})</h1>
 
+  <h1 class="govuk-heading-s">Main offence</h1>
+  <h1 class="govuk-heading-m">Sexual activity with a female child under 16</h1>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
   {{ govukRadios({
     classes: "govuk-radios",
     idPrefix: "responsible",
     name: "responsible",
     fieldset: {
       legend: {
-        text: "Who is responsible for this case?"
+        text: "Is this a:"
       }
     },
     items: [
       {
         value: "nps",
-        text: "National Probation Service (NPS)"
+        text: "National Probation Service (NPS) case"
       },
       {
         value: "crc",
-        text: "Community Rehabilitation Company (CRC)"
+        text: "Community Rehabilitation Company (CRC) case"
       }
     ]
   }) }}
@@ -131,5 +136,7 @@
     text: "Continue",
     href: "/prototype2/tiering-result/"+id
   }) }}
+
+  <h5 class="govuk-heading-s"><a href="/prototype2/tiering/{{prisoner.id}}">Save and complete later</a></h5>
 
 {% endblock %}

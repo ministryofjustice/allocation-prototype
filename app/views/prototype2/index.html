@@ -20,21 +20,21 @@
         <div class="govuk-grid-column-one-half">
           <div class="box textalign--center">
             <p>
-              <span class="govuk-body govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">{{allocatedPrisoners.length}}</span>
+              <span class="govuk-body govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">{{unprocessedPrisoners.length}}</span>
               <br/>
-              <span class="govuk-body govuk-!-font-size-16">Allocated</span>
+              <span class="govuk-body govuk-!-font-size-16">Awaiting sentence calculation</span>
             </p>
-            <a href="/prototype2/allocations.html#allocated">Manage</a>
+            <a href="/prototype2/allocations.html#awaiting-processing">View prisoners</a>
           </div>
         </div>
         <div class="govuk-grid-column-one-half">
           <div class="box textalign--center">
             <p>
-              <span class="govuk-body govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">{{unallocatedPrisoners.length}}</span>
+              <span class="govuk-body govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">{{untieredPrisoners.length}}</span>
               <br/>
-              <span class="govuk-body govuk-!-font-size-16">Awaiting allocation</span>
+              <span class="govuk-body govuk-!-font-size-16">Awaiting tiering</span>
             </p>
-            <a href="/prototype2/allocations.html#awaiting-allocation">Allocate a POM to a prisoner</a>
+            <a href="/prototype2/allocations.html#awaiting-tiering">View and tier</a>
           </div>
         </div>
       </div>
@@ -44,21 +44,21 @@
         <div class="govuk-grid-column-one-half">
           <div class="box textalign--center">
             <p>
-              <span class="govuk-body govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">{{untieredPrisoners.length}}</span>
+              <span class="govuk-body govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">{{unallocatedPrisoners.length}}</span>
               <br/>
-              <span class="govuk-body govuk-!-font-size-16">Awaiting tiering</span>
+              <span class="govuk-body govuk-!-font-size-16">Awaiting allocation</span>
             </p>
-            <a href="/prototype2/allocations.html#awaiting-tiering">Complete prisoner tiering information</a>
+            <a href="/prototype2/allocations.html#awaiting-allocation">View and allocate</a>
           </div>
         </div>
         <div class="govuk-grid-column-one-half">
           <div class="box textalign--center">
             <p>
-              <span class="govuk-body govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">{{unprocessedPrisoners.length}}</span>
+              <span class="govuk-body govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">{{allocatedPrisoners.length}}</span>
               <br/>
-              <span class="govuk-body govuk-!-font-size-16">Awaiting sentence calculation</span>
+              <span class="govuk-body govuk-!-font-size-16">Allocated</span>
             </p>
-            <a href="/prototype2/allocations.html#awaiting-processing">View prisoners</a>
+            <a href="/prototype2/allocations.html#allocated">View and reallocate</a>
           </div>
         </div>
       </div>
