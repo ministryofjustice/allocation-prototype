@@ -2,9 +2,6 @@ table.tablesorter {
   th.tablesorter-header {
     cursor: pointer;
   }
-  th.tablesorter-header-none .tablesorter-header-inner {
-    background: url('../images/black-unsorted.gif') no-repeat right center !important;
-  }
   th.tablesorter-header-asc .tablesorter-header-inner {
     background: url('../images/black-desc.gif') no-repeat right center !important;
   }
@@ -14,5 +11,8 @@ table.tablesorter {
   th.sorter-false .tablesorter-header-inner {
     cursor: auto;
     background: none !important;
+  }
+  .tablesorter-header-inner a:visited {
+    color: $govuk-blue;
   }
 }
