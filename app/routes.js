@@ -67,10 +67,6 @@ router.get('/prototype2/prisoner_info/:id', function (req, res) {
   res.render('prototype2/prisoner_info', {'id': req.params.id})
 })
 
-router.get('/prototype2/confirm_allocation/:prisoner_id/:pom_id', function (req, res) {
-  res.render('prototype2/confirm_allocation', {'prisoner_id': req.params.prisoner_id, 'pom_id': req.params.pom_id})
-})
-
 router.get('/login_error', function (req, res) {
   res.render('login', {'error': true})
 })
@@ -80,11 +76,14 @@ router.get('/logout', function (req, res) {
   res.redirect('/')
 })
 
-router.get('/prototype2/allocatepom', function (req, res) {
-  let index = getPrisonerIndex(req, req.session.data['prisonerId'])
-  let pomIndex = req.session.data['allocatedPom']
-  allocatePom(req, index, pomIndex);
-  console.log(req.session.data.prisoners[index]);
+router.get('/prototype2/confirm_allocation/:prisoner_id/:pom_id', function (req, res) {
+  res.render('prototype2/confirm_allocation', {'prisoner_id': req.params.prisoner_id, 'pom_id': req.params.pom_id})
+})
+
+router.get('/prototype2/allocatepom/:prisoner_id/:pom_id', function (req, res) {
+  let prisonerIndex = getPrisonerIndex(req, req.params.prisoner_id)
+  let pomIndex = getPomIndex(req, req.params.pom_id)
+  allocatePom(req, prisonerIndex, pomIndex);
   res.redirect('/prototype2/allocations')
 })
 
@@ -103,6 +102,18 @@ function getPrisonerIndex(req, id) {
     }
   });
   return prisonerIndex;
+}
+
+function getPomIndex(req, id) {
+  var id = parseInt(id);
+  var poms = req.session.data.poms;
+  var pomIndex = null;
+  poms.forEach(function(pom, index) {
+    if (pom.id === id) {
+      pomIndex = index;
+    }
+  });
+  return pomIndex;
 }
 
 function tierPrisoner(req) {
