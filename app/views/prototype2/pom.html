@@ -7,6 +7,7 @@ GOV.UK Prototype Kit
 {% block content %}
 
 {% set pom = data.poms[pomIndex] %}
+{% set prisoners = data.prisoners %}
 
   {{ govukBackLink({
     text: "Back",
@@ -91,16 +92,20 @@ GOV.UK Prototype Kit
         </tr>
       </thead>
       <tbody class="govuk-table__body">
+        {% for prisoner in prisoners %}
+        {% if prisoner.pomIndex == pomIndex %}
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Bob Smith</td>
-          <td class="govuk-table__cell">1234567</td>
-          <td class="govuk-table__cell">12/12/12</td>
-          <td class="govuk-table__cell">24/01/78</td>
-          <td class="govuk-table__cell">A</td>
-          <td class="govuk-table__cell">12/09/18</td>
+          <td class="govuk-table__cell">{{prisoner | personName}}</td>
+          <td class="govuk-table__cell">{{prisoner.number}}</td>
+          <td class="govuk-table__cell">{{prisoner.arrival_date}}</td>
+          <td class="govuk-table__cell">{{prisoner.release_date}}</td>
+          <td class="govuk-table__cell">{{prisoner.tier}}</td>
+          <td class="govuk-table__cell">{{prisoner.allocation_date}}</td>
           <td class="govuk-table__cell">Responsible</td>
-          <td class="govuk-table__cell"><a href="">Reallocate</a></td>
+          <td class="govuk-table__cell"><a href="/prototype2/prisoner/{{prisoner.id}}">Reallocate</a></td>
         </tr>
+        {% endif %}
+        {% endfor %}
       </tbody>
     </table>
 
