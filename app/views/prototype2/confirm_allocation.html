@@ -16,13 +16,13 @@
 
 <h1 class="govuk-heading-l">Confirm allocation</h1>
 
-<h3 class="govuk-heading-s">You are assigning {{prisoner | personName}} to {{pom | personName}}</h3>
+<h3 class="govuk-body-m">You are allocating {{prisoner | personName}} to {{pom | personName}}</h3>
 
-<h3 class="govuk-heading-s">We'll email {{pom.first_name}} {{pom.surname}} at {{pom.email}}
+<h3 class="govuk-body-m">We'll email {{pom.first_name}} {{pom.surname}} at {{pom.email}}
   to let them know about their new allocation</h3>
 
-  <a href="/prototype2/allocatePom/{{prisoner.id}}/{{pom.id}}" role="button" class="govuk-button govuk-button--start">
-    Complete alllocation
+  <a href="/prototype2/allocatePom/{{prisoner.id}}/{{pom.id}}" role="button" class="govuk-button govuk-button">
+    Complete allocation
   </a>
 
 {% endblock %}
