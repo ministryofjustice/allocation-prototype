@@ -20,9 +20,9 @@
 
 {% macro pom_type_recommendation(prisoner) %}
   {% if(prisoner.pom_type == "Prison-POM") %}
-    {{"Prison Staff Prisoner Offender Manager (POM)"}}
+    {{"Prison officer POM"}}
   {% else %}
-    {{"Probation Staff Prisoner Offender Manager (POM)"}}
+    {{"Probation officer POM"}}
   {% endif %}
 {% endmacro %}
 
@@ -41,7 +41,7 @@
       <br/>Tier calculation
     </h1>
     <div class="govuk-panel__body">
-      {{prisoner | fullName}} should be allocated to a Prison Staff Prisoner Officer Manager (POM)
+      {{prisoner | fullName}} should be allocated to a Prison officer POM
     </div>
   </div>
 
@@ -63,7 +63,7 @@
         <div class="govuk-radios__item">
           <input {{checked_attr(prisoner, "Prison-POM")}} class="govuk-radios__input" id="allocate-conditional-2" name="allocate" type="radio" value="Prison-POM" {{ conditional_override(prisoner, "Prison-POM") }}>
           <label class="govuk-label govuk-radios__label" for="allocate-conditional-2">
-            Prison staff POM
+            Prison officer POM
           </label>
         </div>
         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-allocate-conditional-1">
@@ -78,7 +78,7 @@
             items: [
               {
                 value: "complex",
-                text: "Prisoner assessed as too complex for Prison staff POM"
+                text: "Prisoner assessed as too complex for Prison officer POM"
               },
               {
                 value: "unavailable",
