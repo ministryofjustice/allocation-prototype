@@ -35,7 +35,10 @@ module.exports = {
     "tier": "D",
     "pom_type": "Probation-POM",
     "status_change": "26/09/2018",
-    "allocated": false
+    "allocated": true,
+    "pom_type": "Prison-POM",
+    "allocation_date": "05/01/2018",
+    "pomIndex": 2
   }, {
     "id": "2",
     "first_name": "Pen",
@@ -92,11 +95,11 @@ module.exports = {
     "alerts": 1,
     "sentence_calc": "09/01/2018",
     "arrival_date": "03/01/2018",
-    "release_date": null,
+    "release_date": "05/09/2020",
     "tier": "C",
     "pom_type": "Probation-POM",
     "status_change": "03/09/2018",
-    "allocated": null
+    "allocated": false
   }, {
     "id": "6",
     "first_name": "Daniel",
@@ -111,7 +114,7 @@ module.exports = {
     "tier": "C",
     "pom_type": "Probation-POM",
     "status_change": "25/09/2018",
-    "allocated": null
+    "allocated": false
   }, {
     "id": "7",
     "first_name": "Desmond",
@@ -171,11 +174,11 @@ module.exports = {
     "alerts": 16,
     "sentence_calc": "01/01/2018",
     "arrival_date": "02/01/2018",
-    "release_date": null,
+    "release_date": "14/06/2021",
     "tier": "B",
     "pom_type": "Prison-POM",
     "status_change": "01/09/2018",
-    "allocated": null
+    "allocated": false
   }, {
     "id": "11",
     "first_name": "Bevan",
@@ -248,7 +251,7 @@ module.exports = {
     "alerts": 10,
     "sentence_calc": "07/01/2018",
     "arrival_date": "07/01/2018",
-    "release_date": null,
+    "release_date": "23/12/2048",
     "tier": "D",
     "pom_type": "Prison-POM",
     "status_change": "25/09/2018",
@@ -313,7 +316,7 @@ module.exports = {
     "tier": "C",
     "pom_type": "Prison-POM",
     "status_change": "04/09/2018",
-    "allocated": null
+    "allocated": false
   }, {
     "id": "20",
     "first_name": "Pietro",
@@ -356,9 +359,7 @@ module.exports = {
     "tier": "A",
     "pom_type": "Prison-POM",
     "status_change": "24/09/2018",
-    "allocation_date": "05/01/2018",
-    "allocated": true,
-    "pomIndex": 2
+    "allocated": false,
   }, {
     "id": "23",
     "first_name": "Kele",
@@ -370,7 +371,7 @@ module.exports = {
     "sentence_calc": "09/01/2018",
     "arrival_date": "08/01/2018",
     "release_date": "09/01/2018",
-    "tier": null,
+    "tier": "D",
     "status_change": "20/09/2018",
     "allocated": false
   }, {
@@ -446,7 +447,7 @@ module.exports = {
     "sentence_calc": "02/01/2018",
     "arrival_date": "01/01/2018",
     "release_date": "07/01/2018",
-    "tier": null,
+    "tier": "B",
     "status_change": "14/09/2018",
     "allocated": false
   }, {
@@ -460,7 +461,7 @@ module.exports = {
     "sentence_calc": "02/01/2018",
     "arrival_date": "04/01/2018",
     "release_date": "08/01/2018",
-    "tier": null,
+    "tier": "C",
     "status_change": "21/09/2018",
     "allocated": false
   }, {
