@@ -4,6 +4,9 @@ $govuk-global-styles: true;
 // Import GOV.UK Frontend
 @import "node_modules/govuk-frontend/all";
 
+// Import MOJ Digital Frontend
+@import "node_modules/@mojdigital/pattern-library/all";
+
 // Patterns that aren't in Frontend
 @import "patterns/check-your-answers";
 @import "patterns/task-list";
@@ -16,6 +19,7 @@ $govuk-global-styles: true;
 @import "helpers";
 @import "tables";
 @import "tablesort";
+@import "hmpss_header";
 @import "components/box";
 @import "components/button";
 @import "components/timeline"
