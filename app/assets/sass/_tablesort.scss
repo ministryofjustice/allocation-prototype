@@ -14,6 +14,10 @@ table.tablesorter {
     cursor: auto;
     background: none !important;
   }
+  th.tablesorter-header-none .tablesorter-header-inner {
+    background: url('../images/black-unsorted.gif') no-repeat right center;
+  }
+
   .tablesorter-header-inner a:visited {
     color: $govuk-blue;
   }
