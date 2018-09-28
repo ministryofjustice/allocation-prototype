@@ -6,6 +6,19 @@
 
 {% set prisoner = data.prisoners | getPrisoner(id) %}
 
+{% from "textarea/macro.njk" import govukTextarea %}
+
+{% set otherHtml %}
+{{ govukTextarea({
+  name: "more-detail",
+  id: "more-detail",
+  rows: 3,
+  label: {
+    text: "Please provide more detail"
+  }
+}) }}
+{% endset -%}
+
 {% macro checked_attr(prisoner, pomType) %}
   {% if(prisoner.pom_type == pomType) %}
     {{"checked"}}
@@ -90,7 +103,10 @@
               },
               {
                 value: "other",
-                text: "Other reason"
+                text: "Other reason",
+                conditional: {
+                  html: otherHtml
+                }
               }
             ]
           }) }}
