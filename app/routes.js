@@ -93,7 +93,7 @@ router.post('/prototype2/confirm-allocation/:prisoner_id', function (req, res) {
 
 router.post('/prototype2/confirm_tiering/:prisoner_id', function (req, res) {
   confirmTiering(req)
-  res.redirect('/prototype2/allocations#awaiting-allocation')
+  res.redirect('/prototype2/allocations#awaiting-tiering')
 })
 
 router.get('/prototype2/allocatepom/:prisoner_id/:pom_id', function (req, res) {

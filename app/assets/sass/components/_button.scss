@@ -1,3 +1,23 @@
 .button-secondary {
-  background-color: lightgrey;
+  background: #dee0e2;
+  color: black;
+  position: relative;
+  padding: .526315em .789473em .263157em;
+  border: none;
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  border-bottom: 2px solid darken(black, 15%);
+  font-size: 1em;
+  line-height: 1.25;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  &:hover {
+    color: 	#2b8cc4;
+    text-decoration: none;
+  }
+  &:visited {
+    color: 	#4c2c92;
+  }
 }
