@@ -1,0 +1,24 @@
+.app-header {
+  padding-top: 13px;
+  padding-bottom: 7px;
+  border-bottom: 10px solid #005ea5;
+  color: #fff;
+  background: #0b0c0c;
+}
+
+.hmpss__logotype-crest {
+  display: inline-block;
+  content: "";
+  background: url(../images/Crest@2x.png) no-repeat;
+  background-size: contain;
+  width: 36px;
+  height: 30px;
+  margin-bottom: -2px;
+  margin-right: 10px;
+}
+
+.hmpss-header__navigation {
+  display: inline;
+  float: right;
+  display: inline-block !important;
+}

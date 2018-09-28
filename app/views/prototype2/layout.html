@@ -33,24 +33,7 @@
 
 {% block header %}
   {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: serviceName,
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container",
-    navigation: [
-      {
-        href: "/prototype2/",
-        text: "Home"
-      },
-      {
-        href: "/logout",
-        text: "Logout"
-      }
-    ]
-  }) }}
+  {% include "includes/hmpss_header_logged_in.html" %}
 {% endblock %}
 
 {% if useAutoStoreData %}
