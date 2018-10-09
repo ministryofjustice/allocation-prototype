@@ -7,7 +7,6 @@
 {% set allocatedPrisoners = data.prisoners | allocatedPrisoners %}
 {% set unallocatedPrisoners = data.prisoners | unallocatedPrisoners %}
 {% set untieredPrisoners = data.prisoners | untieredPrisoners %}
-{% set unprocessedPrisoners = data.prisoners | unprocessedPrisoners %}
 
 {% block content %}
 
@@ -20,13 +19,8 @@
 
     <ul class="govuk-tabs__list">
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#awaiting-processing">
-          Awaiting processing ({{unprocessedPrisoners.length}})
-        </a>
-      </li>
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#awaiting-tiering">
-          Awaiting tiering ({{untieredPrisoners.length}})
+        <a class="govuk-tabs__tab" href="#allocated">
+          Allocated ({{allocatedPrisoners.length}})
         </a>
       </li>
       <li class="govuk-tabs__list-item">
@@ -35,8 +29,8 @@
         </a>
       </li>
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#allocated">
-          Allocated ({{allocatedPrisoners.length}})
+        <a class="govuk-tabs__tab" href="#awaiting-tiering">
+          Awaiting tiering ({{untieredPrisoners.length}})
         </a>
       </li>
     </ul>
@@ -88,7 +82,6 @@
             <th class="govuk-table__header sorter-false" scope="col">Release date</th>
             <th class="govuk-table__header header-width__8" scope="col"><a href='#'
                 class='table-sorter__link'>Tier</th>
-            <th class="govuk-table__header" scope="col">Status change</th>
             <th class="govuk-table__header" scope="col">Action</th>
           </tr>
         </thead>
@@ -100,7 +93,6 @@
             <td aria-label="Arrival date" class="govuk-table__cell ">{{prisoner.arrival_date}}</td>
             <td aria-label="Release date" class="govuk-table__cell ">{{prisoner.release_date}}</td>
             <td aria-label="Tier" class="govuk-table__cell ">{{prisoner.tier}}</td>
-            <td aria-label="Status change" class="govuk-table__cell ">{{prisoner.status_change}}</td>
             <td aria-label="Action" class="govuk-table__cell "><a href="/prototype2/prisoner/{{prisoner.id}}">Allocate</a></td>
           </tr>
           {% endfor %}
@@ -118,7 +110,6 @@
             <th class="govuk-table__header sorter-false" scope="col">Prisoner number</th>
             <th class="govuk-table__header sorter-false" scope="col">Arrival date</th>
             <th class="govuk-table__header sorter-false" scope="col">Release date</th>
-            <th class="govuk-table__header sorter-false" scope="col">Status change</th>
             <th class="govuk-table__header sorter-false" scope="col">Action</th>
           </tr>
         </thead>
@@ -129,35 +120,7 @@
             <td aria-label="Prisoner number" class="govuk-table__cell ">{{prisoner.number}}</td>
             <td aria-label="Arrival date" class="govuk-table__cell ">{{prisoner.arrival_date}}</td>
             <td aria-label="Release date" class="govuk-table__cell ">{{prisoner.release_date}}</td>
-            <td aria-label="Status change" class="govuk-table__cell ">{{prisoner.status_change}}</td>
             <td aria-label="Action" class="govuk-table__cell "><a href="/prototype2/tiering/{{prisoner.id}}">Start tiering</a></td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-
-    </section>
-    <section class="govuk-tabs__panel" id="awaiting-processing">
-
-      <table class="govuk-table responsive tablesorter">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="col"><a href='#'
-                class='table-sorter__link'>Prisoner name</th>
-            <th class="govuk-table__header sorter-false" scope="col">Prisoner number</th>
-            <th class="govuk-table__header sorter-false" scope="col">Arrival date</th>
-            <th class="govuk-table__header sorter-false" scope="col">Release date</th>
-            <th class="govuk-table__header sorter-false" scope="col">Status change</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          {% for prisoner in unprocessedPrisoners %}
-          <tr class="govuk-table__row">
-            <td aria-label="Action" class="govuk-table__cell ">{{prisoner | personName}}</a></td>
-            <td aria-label="Prisoner number" class="govuk-table__cell ">{{prisoner.number}}</td>
-            <td aria-label="Arrival date" class="govuk-table__cell ">{{prisoner.arrival_date}}</td>
-            <td aria-label="Release date" class="govuk-table__cell ">&nbsp;</td>
-            <td aria-label="Status change" class="govuk-table__cell ">{{prisoner.status_change}}</td>
           </tr>
           {% endfor %}
         </tbody>
