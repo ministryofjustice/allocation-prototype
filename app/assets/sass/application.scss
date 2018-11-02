@@ -18,6 +18,7 @@ $govuk-global-styles: true;
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 @import "helpers";
 @import "tables";
+@import "pagination";
 @import "tablesort";
 @import "hmpps_header";
 @import "components/box";

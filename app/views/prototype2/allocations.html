@@ -12,6 +12,7 @@
 
   <h1 class="govuk-heading-xl">Allocations</h1>
 
+  <!-- Allocations Table -->
   <div class="govuk-tabs" data-module="tabs">
     <h2 class="govuk-tabs__title">
       Allocations
@@ -68,8 +69,11 @@
           {% endfor %}
         </tbody>
       </table>
-
+    {% block pagination %}
+      {% include "includes/pagination.html" %}
+    {% endblock %}
     </section>
+
     <section class="govuk-tabs__panel" id="awaiting-allocation">
 
       <table class="govuk-table responsive tablesorter">
@@ -125,7 +129,6 @@
           {% endfor %}
         </tbody>
       </table>
-
     </section>
   </div>
 
