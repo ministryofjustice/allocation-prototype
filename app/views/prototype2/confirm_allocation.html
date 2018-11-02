@@ -14,15 +14,18 @@
 {% set prisoner = data.prisoners | getPrisoner(prisoner_id) %}
 {% set pom =  data.poms | getPom(pom_id) %}
 
-<h1 class="govuk-heading-l">Confirm allocation</h1>
+<div>
+  <h1 class="govuk-heading-xl govuk-!-margin-top-4">Confirm allocation</h1>
+  <p class="govuk-body">You are allocating {{prisoner | personName}} to {{pom | personName}}</h3>
+  <p class="govuk-body">We'll using the email below to let them know about their new allocation</h3>
+  <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24
+  govuk-!-margin-top-6">{{pom.email}}</p>
+</div>
 
-<h3 class="govuk-body-m">You are allocating {{prisoner | personName}} to {{pom | personName}}</h3>
-
-<h3 class="govuk-body-m">We'll email {{pom.first_name}} {{pom.surname}} at {{pom.email}}
-  to let them know about their new allocation</h3>
-
+<div class='govuk-!-margin-top-9'>
   <a href="/prototype2/allocatePom/{{prisoner.id}}/{{pom.id}}" role="button" class="govuk-button govuk-button">
     Complete allocation
   </a>
+</div>
 
 {% endblock %}
