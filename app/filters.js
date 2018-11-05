@@ -7,46 +7,53 @@ module.exports = function (env) {
    */
   var filters = {}
 
-  filters.fullName = function(person) {
+  filters.fullName = function (person) {
     return person.first_name + ' ' + person.surname
   }
 
-  filters.personName = function(person) {
+  filters.personName = function (person) {
     return person.surname + ', ' + person.first_name
   }
 
-  filters.allocatedPrisoners = function(prisoners) {
-    return prisoners.filter(prisoner => !!prisoner.allocated && !!prisoner.tier && !!prisoner.release_date);
+  filters.allocatedPrisoners = function (prisoners) {
+    return prisoners.filter(prisoner => !!prisoner.allocated && !!prisoner.tier && !!prisoner.release_date)
   }
 
-  filters.unallocatedPrisoners = function(prisoners) {
-    return prisoners.filter(prisoner => !prisoner.allocated && !!prisoner.tier && !!prisoner.release_date);
+  filters.unallocatedPrisoners = function (prisoners) {
+    return prisoners.filter(prisoner => !prisoner.allocated && !!prisoner.tier && !!prisoner.release_date)
   }
 
-  filters.untieredPrisoners = function(prisoners) {
-    return prisoners.filter(prisoner => !prisoner.tier && !!prisoner.release_date);
+  filters.untieredPrisoners = function (prisoners) {
+    return prisoners.filter(prisoner => !prisoner.tier && !!prisoner.release_date)
   }
 
-  filters.unprocessedPrisoners = function(prisoners) {
-    return prisoners.filter(prisoner => !prisoner.release_date);
+  filters.unprocessedPrisoners = function (prisoners) {
+    return prisoners.filter(prisoner => !prisoner.release_date)
   }
 
-  filters.pomsByType = function(poms, type) {
-    return poms.filter(pom => pom.type == type)
+  filters.pomsByType = function (poms, type) {
+    return poms.filter(pom => pom.type === type)
   }
 
-  filters.getPrisoner = function(prisoners, prisonerID) {
-    return prisoners.find(function(prisoner) {
-      return prisoner.id === prisonerID;
-    });
+  filters.prisonPoms = function (poms) {
+    return poms.filter(pom => pom.type === 'Prison-POM')
   }
 
-  filters.getPom = function(poms, pomID) {
-    return poms.find(function(pom) {
-      return pom.id === parseInt(pomID);
-    });
+  filters.probationPoms = function (poms) {
+    return poms.filter(pom => pom.type === 'Probation-POM')
   }
 
+  filters.getPrisoner = function (prisoners, prisonerID) {
+    return prisoners.find(function (prisoner) {
+      return prisoner.id === prisonerID
+    })
+  }
+
+  filters.getPom = function (poms, pomID) {
+    return poms.find(function (pom) {
+      return pom.id === parseInt(pomID)
+    })
+  }
 
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
