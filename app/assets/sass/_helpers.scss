@@ -18,10 +18,6 @@
   opacity: 0;
 }
 
-.govuk-button {
-  background-color: #005ea5;
-}
-
-.govuk-button:hover {
+.govuk-button, .govuk-button:hover, .govuk-button:focus {
   background-color: #005ea5;
 }
