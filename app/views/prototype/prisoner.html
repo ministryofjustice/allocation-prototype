@@ -1,131 +1,86 @@
+
 {% extends "layout_logged_in.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  Prisoner Info
 {% endblock %}
 
 {% block content %}
 
 {% set prisoner = data.prisoners | getPrisoner(id) %}
 {% set allocatedPOM = data.poms[prisoner.pomIndex] %}
-{% set poms = data.poms | pomsByType(prisoner.pom_type) %}
+{% set pom =  data.poms | getPom(pom_id) %}
+
 
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back();"
   }) }}
 
-  <h1 class="govuk-heading-l">Allocate Prisoner</h1>
-
   {% include "../includes/prisoner_details.html" %}
 
-  <!-- Offences -->
-  <table class="govuk-table govuk-!-margin-top-8">
-    <tbody class="govuk-table__body">
-      <tr class="govuk-table__row">
-        <td class="govuk-table__header" scope="row">Offences</td>
-        <td class="govuk-table__cell table_cell__right_align"></td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Main offence</td>
-        <td class="govuk-table__cell table_cell__right_align">Sexual activity with a female child under 16</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Release date</td>
-        <td class="govuk-table__cell table_cell__right_align">{{ prisoner.release_date }}</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- Tiering information -->
-  <table class="govuk-table govuk-!-margin-top-8">
-    <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <td class="govuk-table__header" scope="row">Tiering information</td>
-      <td class="govuk-table__cell table_cell__right_align"></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Case allocation</td>
-      <td class="govuk-table__cell table_cell__right_align">National Probation Service (NPS)</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Risk of Serious Recidivism (RSR) score</td>
-      <td class="govuk-table__cell table_cell__right_align">3.3%</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Offender Group Reconviction Scale (OGRS)</td>
-      <td class="govuk-table__cell table_cell__right_align">91%</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Risk of Serious Harm (ROSH) score</td>
-      <td class="govuk-table__cell table_cell__right_align">Medium</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Tiering calculation</td>
-      <td class="govuk-table__cell table_cell__right_align">{{ prisoner.tier }}</td>
-    </tr>
-    </tbody>
-  </table>
-
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <div>&nbsp;</div>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m">Location</span>
+      <h3 class="govuk-heading-m">G-5-32</h3>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m">Indeterminate sentence</span>
+      <h3 class="govuk-heading-m">No</h3>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m">Responsible POM</span>
+      <h3 class="govuk-heading-m"><a href="#">Smith, Sally</a></h3>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <div>&nbsp;</div>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+      <span class="govuk-caption-m">Add a supporting Pom</span>
+      <h3 class="govuk-heading-m"><a href="#">Add a supporting POM</a></h3>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+      <div>&nbsp;</div>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+      <div>&nbsp;</div>
+    </div>
+  </div>
   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--invisible">
 
-  <h4 class="govuk-heading-m">Recommendation: Probation officer POM</h4>
+  <h3 class="govuk-heading-m">History</h3>
 
-  <p>This is based on the prisoner's tiering calculatiion.</p>
-  <p>You are allocating a <strong>primary POM</strong>.</p>
-
-  <form method='post'>
-    <div class='govuk-form-group'>
-      <fieldset class='govuk-fieldset'>
-      <div class='govuk-radios'>
-        <table class="govuk-table responsive">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th class="govuk-table__header" scope="col">
-                <div class='invisible__header'>Action</div>
-              </th>
-              <th class="govuk-table__header" scope="col">POM name</th>
-              <th class="govuk-table__header" scope="col">Type</th>
-              <th class="govuk-table__header" scope="col">Tier A cases</th>
-              <th class="govuk-table__header" scope="col">Tier B cases</th>
-              <th class="govuk-table__header" scope="col">Tier C cases</th>
-              <th class="govuk-table__header" scope="col">Tier D cases</th>
-              <th class="govuk-table__header" scope="col">Total</th>
-              <th class="govuk-table__header" scope="col">Working pattern</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            {% for pom in poms %}
-            <tr class="govuk-table__row">
-              <td aria-label="Action" class="govuk-table__cell">
-                <div class='govuk-radios__item'>
-                  <input class='govuk-radios__input' id='{{pom.id}}' name="allocation[pom_id]" type='radio' value='{{pom.id}}'>
-                  <label class='govuk-label govuk-radios__label' for="pom-{{pom.id}}"></label>
-                </div>
-              </td>
-              <td aria-label="POM name" class="govuk-table__cell ">{{pom | personName}} </td>
-              <td aria-label="Type" class="govuk-table__cell">{{pom.type}}</td>
-              <td aria-label="Tier A cases" class="govuk-table__cell">{{pom.tier_a}}</td>
-              <td aria-label="Tier B cases" class="govuk-table__cell ">{{pom.tier_b}}</td>
-              <td aria-label="Tier C cases" class="govuk-table__cell ">{{pom.tier_c}}</td>
-              <td aria-label="Tier D cases" class="govuk-table__cell ">{{pom.tier_d}}</td>
-              <td aria-label="Total" class="govuk-table__cell ">{{pom.total}}</td>
-              <td aria-label="Working pattern" class="govuk-table__cell ">{{pom.working_pattern}}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-    </fieldset>
+  <div class="row">
+  <div class="column-two-thirds">
+    <div class="timeline">
+      <ul>
+        <li class="action_needed">
+          <h2>Initial contact made</h2>
+          <p><a href="#">Smith, Sally</a></p>
+          <p class="time">18 September 2018 at 1.01pm</p>
+        </li>
+        <li>
+          <h2>Allocated to responsible POM {{pom}}</h2>
+          <p>Kennedy, Allison</p>
+          <p class="time">16 September 2018 at 11.32am</p>
+        </li>
+        <li>
+          <h2>Tiering calculation {{prisoner.tier}}</h2>
+          <p>Kennedy, Allison</p>
+          <p class="time">10 September 2018 at 8.12pm</p>
+        </li>
+        <li>
+          <h2>Sentence calculation completed</h2>
+          <p>Scarn, Michael</p>
+          <p class="time">8 September 2018</p>
+        </li>
+      </ul>
     </div>
-
-    <h5 class="govuk-heading-s"><a href="/prototype/tiering/{{prisoner.id}}">Amend prisoner's tiering and allocation information</a></h5>
-
-    <button type="submit" class="button button-secondary">+ Supporting POM</button>
-
-    <div>&nbsp;</div>
-
-    <button type="submit" class="govuk-button" formaction="/prototype/confirm-allocation/{{prisoner.id}}">Continue</button>
-  </form>
-
+  </div>
+</div>
 {% endblock %}

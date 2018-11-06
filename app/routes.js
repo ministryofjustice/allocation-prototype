@@ -34,20 +34,12 @@ router.get('/prototype/pom/:id', function(req, res) {
   res.render('prototype/pom', {'pomIndex': pomIndex})
 })
 
-router.get('/prototype/tiering/:id', function (req, res) {
-  res.render('prototype/tiering', {'id': req.params.id})
-})
-
-router.get('/prototype/tiering-result/:id', function (req, res) {
-  res.render('prototype/tiering-result', {'id': req.params.id})
+router.get('/prototype/prisoner-allocation/:id', function (req, res) {
+  res.render('prototype/prisoner_allocation', {'id': req.params.id})
 })
 
 router.get('/prototype/prisoner/:id', function (req, res) {
   res.render('prototype/prisoner', {'id': req.params.id})
-})
-
-router.get('/prototype/prisoner_info/:id', function (req, res) {
-  res.render('prototype/prisoner_info', {'id': req.params.id})
 })
 
 router.get('/new_email', function (req, res) {
