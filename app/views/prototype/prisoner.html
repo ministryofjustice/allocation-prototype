@@ -1,4 +1,4 @@
-{% extends "prototype2/layout.html" %}
+{% extends "layout_logged_in.html" %}
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
@@ -119,13 +119,13 @@
     </fieldset>
     </div>
 
-    <h5 class="govuk-heading-s"><a href="/prototype2/tiering/{{prisoner.id}}">Amend prisoner's tiering and allocation information</a></h5>
+    <h5 class="govuk-heading-s"><a href="/prototype/tiering/{{prisoner.id}}">Amend prisoner's tiering and allocation information</a></h5>
 
     <button type="submit" class="button button-secondary">+ Supporting POM</button>
 
     <div>&nbsp;</div>
 
-    <button type="submit" class="govuk-button" formaction="/prototype2/confirm-allocation/{{prisoner.id}}">Continue</button>
+    <button type="submit" class="govuk-button" formaction="/prototype/confirm-allocation/{{prisoner.id}}">Continue</button>
   </form>
 
 {% endblock %}

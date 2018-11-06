@@ -1,4 +1,4 @@
-{% extends "prototype2/layout.html" %}
+{% extends "layout_logged_in.html" %}
 
 {% block pageTitle %}
 GOV.UK Prototype Kit
@@ -101,7 +101,7 @@ GOV.UK Prototype Kit
           <td class="govuk-table__cell">{{prisoner.tier}}</td>
           <td class="govuk-table__cell">{{prisoner.allocation_date}}</td>
           <td class="govuk-table__cell">Responsible</td>
-          <td class="govuk-table__cell"><a href="/prototype2/prisoner/{{prisoner.id}}">Reallocate</a></td>
+          <td class="govuk-table__cell"><a href="/prototype/prisoner/{{prisoner.id}}">Reallocate</a></td>
         </tr>
         {% endif %}
         {% endfor %}

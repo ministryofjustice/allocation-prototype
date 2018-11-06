@@ -3,73 +3,55 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
-router.get('/prototype1/', function (req, res) {
+router.get('/', function (req, res) {
+  res.redirect(302, '/prototype')
+})
+
+router.get('/prototype/', function (req, res) {
   let loggedIn = req.session.data['logged_in']
 
   if (loggedIn === false) {
-    res.redirect('/login')
+    res.redirect('/prototype/login')
   } else {
-    res.render('prototype1/index')
+    res.render('prototype/index')
   }
 })
 
-router.get('/prototype2/', function (req, res) {
-  let loggedIn = req.session.data['logged_in']
-
-  if (loggedIn === false) {
-    res.redirect('/login')
-  } else {
-    res.render('prototype2/index')
-  }
-})
-
-router.post('/home', function (req, res) {
+router.post('/login', function (req, res) {
   let username = req.session.data['username']
   let password = req.session.data['password']
 
-  if (username === 'spo1' && password === 'password') {
+  if (username === 'spo2' && password === 'password') {
     req.session.data['logged_in'] = true
-    res.redirect('/prototype1/')
-  } else if (username === 'spo2' && password === 'password') {
-    req.session.data['logged_in'] = true
-    res.redirect('/prototype2/')
+    res.redirect('/prototype/')
   } else {
     res.redirect('/login_error')
   }
 })
 
-router.get('/prototype1/prisoner/:id', function (req, res) {
-  res.render('prototype1/prisoner', {'id': req.params.id})
-})
-
-router.get('/prototype1/pom/:id', function (req, res) {
-  res.render('prototype1/pom', {'id': req.params.id})
-})
-
-router.get('/prototype2/pom/:id', function(req, res) {
+router.get('/prototype/pom/:id', function(req, res) {
   let pomIndex = getPomIndex(req, req.params.id)
-  res.render('prototype2/pom', {'pomIndex': pomIndex})
+  res.render('prototype/pom', {'pomIndex': pomIndex})
 })
 
-router.get('/prototype2/tiering/:id', function (req, res) {
-  res.render('prototype2/tiering', {'id': req.params.id})
+router.get('/prototype/tiering/:id', function (req, res) {
+  res.render('prototype/tiering', {'id': req.params.id})
 })
 
-router.get('/prototype2/tiering-result/:id', function (req, res) {
-  var prisoner = tierPrisoner(req);
-  res.render('prototype2/tiering-result', {'id': req.params.id})
+router.get('/prototype/tiering-result/:id', function (req, res) {
+  res.render('prototype/tiering-result', {'id': req.params.id})
 })
 
-router.get('/prototype2/prisoner/:id', function (req, res) {
-  res.render('prototype2/prisoner', {'id': req.params.id})
+router.get('/prototype/prisoner/:id', function (req, res) {
+  res.render('prototype/prisoner', {'id': req.params.id})
 })
 
-router.get('/prototype2/prisoner_info/:id', function (req, res) {
-  res.render('prototype2/prisoner_info', {'id': req.params.id})
+router.get('/prototype/prisoner_info/:id', function (req, res) {
+  res.render('prototype/prisoner_info', {'id': req.params.id})
 })
 
 router.get('/new_email', function (req, res) {
-  res.render('prototype2/new_email')
+  res.render('prototype/new_email')
 })
 
 router.get('/login_error', function (req, res) {
@@ -81,9 +63,9 @@ router.get('/logout', function (req, res) {
   res.redirect('/')
 })
 
-router.post('/prototype2/confirm-allocation/:prisoner_id', function (req, res) {
+router.post('/prototype/confirm-allocation/:prisoner_id', function (req, res) {
   res.render(
-    'prototype2/confirm_allocation',
+    'prototype/confirm_allocation',
     {
       'prisoner_id': req.params.prisoner_id,
       'pom_id': req.session.data['allocation']['pom_id']
@@ -91,16 +73,16 @@ router.post('/prototype2/confirm-allocation/:prisoner_id', function (req, res) {
   )
 })
 
-router.post('/prototype2/confirm_tiering/:prisoner_id', function (req, res) {
+router.post('/prototype/confirm_tiering/:prisoner_id', function (req, res) {
   confirmTiering(req)
-  res.redirect('/prototype2/allocations#awaiting-tiering')
+  res.redirect('/prototype/allocations#awaiting-tiering')
 })
 
-router.get('/prototype2/allocatepom/:prisoner_id/:pom_id', function (req, res) {
+router.get('/prototype/allocatepom/:prisoner_id/:pom_id', function (req, res) {
   let prisonerIndex = getPrisonerIndex(req, req.params.prisoner_id)
   let pomIndex = getPomIndex(req, req.params.pom_id)
   allocatePom(req, prisonerIndex, pomIndex);
-  res.redirect('/prototype2/allocations#awaiting-allocation')
+  res.redirect('/prototype/allocations#awaiting-allocation')
 })
 
 function confirmTiering(req) {

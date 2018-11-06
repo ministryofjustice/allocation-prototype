@@ -1,4 +1,4 @@
-{% extends "prototype2/layout.html" %}
+{% extends "layout_logged_in.html" %}
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
@@ -23,7 +23,7 @@
 </div>
 
 <div class='govuk-!-margin-top-9'>
-  <a href="/prototype2/allocatePom/{{prisoner.id}}/{{pom.id}}" role="button" class="govuk-button govuk-button">
+  <a href="/prototype/allocatePom/{{prisoner.id}}/{{pom.id}}" role="button" class="govuk-button govuk-button">
     Complete allocation
   </a>
 </div>

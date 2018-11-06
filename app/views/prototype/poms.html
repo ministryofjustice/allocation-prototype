@@ -1,4 +1,4 @@
-{% extends "prototype2/layout.html" %}
+{% extends "layout_logged_in.html" %}
 
 {% block pageTitle %}
 GOV.UK Prototype Kit
@@ -57,7 +57,7 @@ GOV.UK Prototype Kit
         {% for pom in probationPoms %}
         <tr class="govuk-table__row">
           <td aria-label="POM name" class="govuk-table__cell"><a
-                                    href="/prototype2/pom/{{pom.id}}">{{ pom |
+                                    href="/prototype/pom/{{pom.id}}">{{ pom |
                                     personName }}</a></td>
           <td aria-label="POM tier A cases" class="govuk-table__cell">{{ pom.tier_a }}</td>
           <td aria-label="POM tier B cases" class="govuk-table__cell">{{ pom.tier_b }}</td>
@@ -96,7 +96,7 @@ GOV.UK Prototype Kit
         {% for pom in prisonPoms %}
         <tr class="govuk-table__row">
           <td aria-label="POM name" class="govuk-table__cell"><a
-                                    href="/prototype2/pom/{{pom.id}}">{{ pom |
+                                    href="/prototype/pom/{{pom.id}}">{{ pom |
                                     personName }}</a></td>
           <td aria-label="POM tier A cases" class="govuk-table__cell">{{ pom.tier_a }}</td>
           <td aria-label="POM tier B cases" class="govuk-table__cell">{{ pom.tier_b }}</td>

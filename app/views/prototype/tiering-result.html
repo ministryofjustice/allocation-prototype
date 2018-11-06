@@ -1,4 +1,4 @@
-{% extends "prototype2/layout.html" %}
+{% extends "layout_logged_in.html" %}
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
@@ -58,7 +58,7 @@
     </div>
   </div>
 
-  <form action='/prototype2/confirm_tiering/{{prisoner.id}}' method="post">
+  <form action='/prototype/confirm_tiering/{{prisoner.id}}' method="post">
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend">

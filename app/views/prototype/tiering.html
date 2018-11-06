@@ -1,4 +1,4 @@
-{% extends "prototype2/layout.html" %}
+{% extends "layout_logged_in.html" %}
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
@@ -134,9 +134,9 @@
 
   {{ govukButton({
     text: "Continue",
-    href: "/prototype2/tiering-result/"+id
+    href: "/prototype/tiering-result/"+id
   }) }}
 
-  <h5 class="govuk-heading-s"><a href="/prototype2/allocations#awaiting-tiering">Save and complete later</a></h5>
+  <h5 class="govuk-heading-s"><a href="/prototype/allocations#awaiting-tiering">Save and complete later</a></h5>
 
 {% endblock %}
