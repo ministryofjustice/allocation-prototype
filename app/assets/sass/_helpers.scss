@@ -18,6 +18,14 @@
   opacity: 0;
 }
 
-.govuk-button, .govuk-button:hover, .govuk-button:focus {
-  background-color: #005ea5;
+.govuk-button, .govuk-button:focus {
+  background-color: govuk-colour("blue");
+}
+
+.govuk-button:hover {
+  background-color: govuk-colour("light-blue");
+}
+
+.timeline ul:after {
+  top: 0 !important;
 }
