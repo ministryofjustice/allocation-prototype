@@ -1,4 +1,4 @@
-{% extends "prototype2/layout.html" %}
+{% extends "layout_logged_in.html" %}
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
@@ -12,6 +12,7 @@
 
   <h1 class="govuk-heading-xl">Allocations</h1>
 
+  <!-- Allocations Table -->
   <div class="govuk-tabs" data-module="tabs">
     <h2 class="govuk-tabs__title">
       Allocations
@@ -43,33 +44,39 @@
             <th class="govuk-table__header" scope="col"><a
                 class='table-sorter__link' href='#'>Prisoner name</a></th>
             <th class="govuk-table__header sorter-false" scope="col">Prisoner number</th>
+            <th class="govuk-table__header sorter-false" scope="col">Arrival date</th>
             <th class="govuk-table__header sorter-false" scope="col">Release date</th>
             <th class="govuk-table__header header-width__8" scope="col"><a
                 class='table-sorter__link' href='#'>Tier</a></th>
             <th class="govuk-table__header" scope="col"><a
-            class='table-sorter__link' href='#'>Allocation
-            Date</a></th>
-            <th class="govuk-table__header" scope="col"><a
                 class='table-sorter__link' href='#'>POM</a></th>
+            <th class="govuk-table__header" scope="col"><a
+                class='table-sorter__link' href='#'>Allocation date</a></th>
             <th class="govuk-table__header sorter-false" scope="col">Action</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
           {% for prisoner in allocatedPrisoners %}
           <tr class="govuk-table__row">
-            <td aria-label="Action" class="govuk-table__cell "><a href="/prototype2/prisoner_info/{{prisoner.id}}">{{prisoner | personName}}</a></td>
+            <td aria-label="Prisoner name" class="govuk-table__cell "><a href="/prototype/prisoner/{{prisoner.id}}">{{prisoner | personName}}</a></td>
             <td aria-label="Prisoner number" class="govuk-table__cell ">{{prisoner.number}}</td>
+            <td aria-label="Arrival date" class="govuk-table__cell
+              ">{{prisoner.arrival_date}}</td>
             <td aria-label="Release date" class="govuk-table__cell ">{{prisoner.release_date}}</td>
             <td aria-label="Tier" class="govuk-table__cell ">{{prisoner.tier}}</td>
-            <td aria-label="Tier" class="govuk-table__cell">{{prisoner.allocation_date}}</td>
-            <td aria-label="POM" class="govuk-table__cell"><a href="/prototype2/pom/{{data.poms[prisoner.pomIndex].id}}">{{data.poms[prisoner.pomIndex] | personName}}</a></td>
-            <td aria-label="Action" class="govuk-table__cell "><a href="/prototype2/prisoner/{{prisoner.id}}">Reallocate</a></td>
+            <td aria-label="POM" class="govuk-table__cell"><a href="/prototype/pom/{{data.poms[prisoner.pomIndex].id}}">{{data.poms[prisoner.pomIndex] | personName}}</a></td>
+            <td aria-label="Allocation date" class="govuk-table__cell">{{prisoner.allocation_date}}</td>
+            <td aria-label="Action" class="govuk-table__cell "><a
+                href="/prototype/prisoner/{{prisoner.id}}">View</a></td>
           </tr>
           {% endfor %}
         </tbody>
       </table>
-
+    {% block pagination %}
+      {% include "includes/pagination.html" %}
+    {% endblock %}
     </section>
+
     <section class="govuk-tabs__panel" id="awaiting-allocation">
 
       <table class="govuk-table responsive tablesorter">
@@ -88,12 +95,12 @@
         <tbody class="govuk-table__body">
           {% for prisoner in unallocatedPrisoners %}
           <tr class="govuk-table__row">
-            <td aria-label="Action" class="govuk-table__cell "><a href="/prototype2/prisoner_info/{{prisoner.id}}">{{prisoner | personName}}</a></td>
+            <td aria-label="Action" class="govuk-table__cell "><a href="/prototype/prisoner/{{prisoner.id}}">{{prisoner | personName}}</a></td>
             <td aria-label="Prisoner number" class="govuk-table__cell ">{{prisoner.number}}</td>
             <td aria-label="Arrival date" class="govuk-table__cell ">{{prisoner.arrival_date}}</td>
             <td aria-label="Release date" class="govuk-table__cell ">{{prisoner.release_date}}</td>
             <td aria-label="Tier" class="govuk-table__cell ">{{prisoner.tier}}</td>
-            <td aria-label="Action" class="govuk-table__cell "><a href="/prototype2/prisoner/{{prisoner.id}}">Allocate</a></td>
+            <td aria-label="Action" class="govuk-table__cell "><a href="/prototype/prisoner-allocation/{{prisoner.id}}">Allocate</a></td>
           </tr>
           {% endfor %}
         </tbody>
@@ -120,12 +127,12 @@
             <td aria-label="Prisoner number" class="govuk-table__cell ">{{prisoner.number}}</td>
             <td aria-label="Arrival date" class="govuk-table__cell ">{{prisoner.arrival_date}}</td>
             <td aria-label="Release date" class="govuk-table__cell ">{{prisoner.release_date}}</td>
-            <td aria-label="Action" class="govuk-table__cell "><a href="/prototype2/tiering/{{prisoner.id}}">Start tiering</a></td>
+            <td aria-label="Action" class="govuk-table__cell "><a
+                href="/prototype/prisoner/{{prisoner.id}}">View</a></td>
           </tr>
           {% endfor %}
         </tbody>
       </table>
-
     </section>
   </div>
 

@@ -33,8 +33,8 @@
 
 {% block header %}
   {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {% include "includes/header.html" %}
+  {% include "includes/hmpps_header_logged_in.html" %}
+  {% include "includes/phase_banner.html" %}
 {% endblock %}
 
 {% if useAutoStoreData %}

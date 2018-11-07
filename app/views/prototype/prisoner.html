@@ -1,0 +1,197 @@
+{% extends "layout_logged_in.html" %}
+
+{% block pageTitle %}
+Prisoner Info
+{% endblock %}
+
+{% block content %}
+
+{% set prisoner = data.prisoners | getPrisoner(id) %}
+{% set allocatedPOM = data.poms[prisoner.pomIndex] %}
+{% set pom =  data.poms | getPom(pom_id) %}
+
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back();"
+}) }}
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-one-quarter">
+    <img src="/public/images/prisoner.png" alt="" width="70%">
+  </div>
+  <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-row">
+      <div class='govuk-grid-column-full'>
+        <h2 class="govuk-heading-xl">{{prisoner | personName }}</h2>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">Prisoner number</span>
+        <h3 class="govuk-heading-m">{{prisoner.number}}</h3>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">Nationality</span>
+        <h3 class="govuk-heading-m">{{prisoner.nationality}}</h3>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">Date of birth</span>
+        <h3 class="govuk-heading-m">{{prisoner.dob}}</h3>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">Arrival date</span>
+        <h3 class="govuk-heading-m">{{prisoner.arrival_date}}</h3>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">Release date</span>
+        <h3 class="govuk-heading-m">{{prisoner.release_date}}</h3>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">Case allocation</span>
+        <h3 class="govuk-heading-m">NPS</h3>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">Tier calculation</span>
+        <h3 class="govuk-heading-m">
+          {% if prisoner.tier %}
+          {{ prisoner.tier }}
+          {% else %}
+          None
+          {% endif %}
+        </h3>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">Prisoner allocation</span>
+        <h3 class="govuk-heading-m">Prison POM</h3>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">Current responsibility</span>
+        <h3 class="govuk-heading-m">Prison</h3>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">Primary POM</span>
+        <h3 class="govuk-heading-m"><a href=''>Jara-Duncan, Laura</a></h3>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">Supporting POM</span>
+        <h3 class="govuk-heading-m"><a href=''>Add a support</a></h3>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">COM</span>
+        <h3 class="govuk-heading-m">Unallocated</h3>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">Local divisional unit</span>
+        <h3 class="govuk-heading-m">Plymouth, Cornwall and Isles of
+          Scilly</h3>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">Key worker</span>
+        <h3 class="govuk-heading-m">Southgate, Gareth</h3>
+      </div>
+    </div>
+    <div class='govuk-grid-row'>
+      <div class='govuk-grid-column-one-third'>
+        <a href='' class="govuk-button">
+          View NOMIS profile
+        </a>
+      </div>
+      <div class='govuk-grid-column-one-third'>
+        <a href='' class="govuk-button">
+          Re-allocate prisoner
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<hr \>
+<!-- Supplementary Information table -->
+<div class="govuk-tabs govuk-!-margin-top-9" data-module="tabs">
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#history">
+        History
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#case-notes">
+        Case notes
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#sentence-and-tier">
+        Sentence and tier information
+      </a>
+    </li>
+  </ul>
+
+  <section class="govuk-tabs__panel" id="history">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="timeline">
+          <h2 class="govuk-heading-m">Cardiff prison</h2>
+          <ul>
+            <li>
+              <h3 class="govuk-heading-s">Prisoner allocation</h3>
+              <p>Prisoner allocated to <a href="#">Jara-Duncan, Laura</a></p>
+              <p class="time">20 September 2018 by Kennedy, Alison</p>
+            </li>
+            <li>
+              <h3 class="govuk-heading-s">Sentence calculation completed</h3>
+              <p>Kennedy, Allison</p>
+              <p class="time">10 September 2018, by Kennedy, Alison</p>
+            </li>
+            <li>
+              <h3 class="govuk-heading-s">Processed at Cardiff reception</h3>
+              <p class="time">07 September 2018</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="timeline">
+          <h2 class="govuk-heading-m">Bristol prison</h2>
+          <ul>
+            <li>
+              <h3 class="govuk-heading-s">POM responsibility removed</h3>
+              <p>Prisoner allocation from Westwood, Tim</p>
+              <p class="time">20 September 2018 by Kane, Todd</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <a href=''>Load more</a>
+      </div>
+    </div>
+  </section>
+  <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="case-notes">
+    <h2 class="govuk-heading-l">Case notes</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+      </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+      </tbody>
+    </table>
+  </section>
+  <section class="govuk-tabs__panel govuk-tabs__panel--hidden"
+           id="sentence-and-tier">
+    {% include "../includes/sentence_and_tier_information.html" %}
+  </section>
+</div>
+{% endblock %}
