@@ -58,13 +58,13 @@
         <tbody class="govuk-table__body">
           {% for prisoner in allocatedPrisoners %}
           <tr class="govuk-table__row">
-            <td aria-label="Prisoner name" class="govuk-table__cell "><a href="/prototype/prisoner/{{prisoner.id}}">{{prisoner | personName}}</a></td>
+            <td aria-label="Prisoner name" class="govuk-table__cell ">{{prisoner | personName}}</td>
             <td aria-label="Prisoner number" class="govuk-table__cell ">{{prisoner.number}}</td>
             <td aria-label="Arrival date" class="govuk-table__cell
               ">{{prisoner.arrival_date}}</td>
             <td aria-label="Release date" class="govuk-table__cell ">{{prisoner.release_date}}</td>
             <td aria-label="Tier" class="govuk-table__cell ">{{prisoner.tier}}</td>
-            <td aria-label="POM" class="govuk-table__cell"><a href="/prototype/pom/{{data.poms[prisoner.pomIndex].id}}">{{data.poms[prisoner.pomIndex] | personName}}</a></td>
+            <td aria-label="POM" class="govuk-table__cell">{{data.poms[prisoner.pomIndex] | personName}}</td>
             <td aria-label="Allocation date" class="govuk-table__cell">{{prisoner.allocation_date}}</td>
             <td aria-label="Action" class="govuk-table__cell "><a
                 href="/prototype/prisoner/{{prisoner.id}}">View</a></td>
@@ -95,7 +95,7 @@
         <tbody class="govuk-table__body">
           {% for prisoner in unallocatedPrisoners %}
           <tr class="govuk-table__row">
-            <td aria-label="Action" class="govuk-table__cell "><a href="/prototype/prisoner/{{prisoner.id}}">{{prisoner | personName}}</a></td>
+            <td aria-label="Action" class="govuk-table__cell ">{{prisoner | personName}}</td>
             <td aria-label="Prisoner number" class="govuk-table__cell ">{{prisoner.number}}</td>
             <td aria-label="Arrival date" class="govuk-table__cell ">{{prisoner.arrival_date}}</td>
             <td aria-label="Release date" class="govuk-table__cell ">{{prisoner.release_date}}</td>
@@ -114,9 +114,11 @@
           <tr class="govuk-table__row">
             <th class="govuk-table__header" scope="col"><a href='#'
                                             class='table-sorter__link'>Prisoner name</th>
-            <th class="govuk-table__header sorter-false" scope="col">Prisoner number</th>
-            <th class="govuk-table__header sorter-false" scope="col">Arrival date</th>
-            <th class="govuk-table__header sorter-false" scope="col">Release date</th>
+            <th class="govuk-table__header" scope="col">Prisoner number</th>
+            <th class="govuk-table__header" scope="col"><a href='#'
+                                            class='table-sorter__link'>Arrival date</th>
+            <th class="govuk-table__header" scope="col"><a href='#'
+                                            class='table-sorter__link'>Release date</th>
             <th class="govuk-table__header sorter-false" scope="col">Action</th>
           </tr>
         </thead>
