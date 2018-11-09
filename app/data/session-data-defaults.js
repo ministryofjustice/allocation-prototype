@@ -674,6 +674,6 @@ module.exports = {
       'tier_d': 0,
       'total': 30,
       'working_pattern': 'Full time',
-      'status': 'Active'
+      'status': 'Inactive'
     }]
 }
