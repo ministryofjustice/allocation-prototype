@@ -1,0 +1,63 @@
+<!-- Basic Prisoner Info -->
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row">Prisoner</td>
+    <td class="govuk-table__cell table_cell__right_align"></td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Name</td>
+    <td class="govuk-table__cell table_cell__right_align"><a
+        href="/prototype/prisoner/{{ prisoner.id }}">{{ prisoner |
+        personName }}</a></td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Number</td>
+    <td class="govuk-table__cell table_cell__right_align">{{ prisoner.number }}</td>
+  </tr>
+  </tbody>
+  <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Nationality</td>
+      <td class="govuk-table__cell table_cell__right_align">{{
+        prisoner.nationality }}</td>
+    </tr>
+</table>
+<!-- Offences -->
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row">Offences</td>
+    <td class="govuk-table__cell table_cell__right_align"></td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Main offence</td>
+    <td class="govuk-table__cell table_cell__right_align">Sexual activity with a female child under 16</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Release date</td>
+    <td class="govuk-table__cell table_cell__right_align">{{ prisoner.release_date }}</td>
+  </tr>
+  </tbody>
+</table>
+<!-- Case information -->
+<table class="govuk-table govuk-!-margin-top-8">
+  <tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row">Case information</td>
+    <td class="govuk-table__cell table_cell__right_align"></td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Current responsibility</td>
+    <td class="govuk-table__cell table_cell__right_align">Prison</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Case allocation</td>
+    <td class="govuk-table__cell table_cell__right_align">National Probation
+      Service (NPS)</td>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Tiering calculation</td>
+     <td class="govuk-table__cell table_cell__right_align"><a
+        href="/prototype/prisoner/{{ prisoner.id }}#sentence-and-tier">Tier {{prisoner.tier }}</a></td>
+  </tr>
+  </tbody>
+</table>
