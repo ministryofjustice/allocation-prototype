@@ -14,40 +14,43 @@ GOV.UK Prototype Kit
     href: "javascript:window.history.back();"
   }) }}
 
-<h1 class="govuk-heading-xl">POM Information</h1>
-
 <!-- POM summary -->
+<h1 class="govuk-heading-xl">{{pom | personName}}</h1>
+<h2 class="govuk-heading-m">{{pom.email}}</h2>
+<!-- Spacer -->
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-quarter">
-    <img src="/public/images/prisoner.png" alt="" width="70%">
+  <div class="govuk-grid-column-full">
+    <div style="height: 30px;"></div>
   </div>
-  <div class="govuk-grid-column-three-quarters">
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-four-quarters">
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-third">
-        <span class="govuk-caption-m">POM name</span>
-        <h3 class="govuk-heading-m">{{pom | personName}}</h3>
-      </div>
-      <div class="govuk-grid-column-one-third">
-        <span class="govuk-caption-m">POM level</span>
-        <h3 class="govuk-heading-m">{{pom.type}}</h3>
-      </div>
-      <div class="govuk-grid-column-one-third">
-        <span class="govuk-caption-m">Working Pattern</span>
-        <h3 class="govuk-heading-m">{{pom.working_pattern}}</h3>
-      </div>
-    </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-third">
+      <div class="govuk-grid-column-one-quarter">
         <span class="govuk-caption-m">Gender</span>
         <h3 class="govuk-heading-m">{{pom.gender}}</h3>
       </div>
-      <div class="govuk-grid-column-one-third">
-        <span class="govuk-caption-m">Contact email address</span>
-        <h3 class="govuk-heading-m">{{pom.email}}</h3>
+      <div class="govuk-grid-column-one-quarter">
+        <span class="govuk-caption-m">POM level</span>
+        <h3 class="govuk-heading-m">{{pom.type}}</h3>
+      </div>
+      <div class="govuk-grid-column-one-quarter">
+        <span class="govuk-caption-m">Working Pattern</span>
+        <h3 class="govuk-heading-m">{{pom.working_pattern}}</h3>
+      </div>
+      <div class="govuk-grid-column-one-quarter">
+        <span class="govuk-caption-m">Status</span>
+        <h3 class="govuk-heading-m">{{pom.status}}</h3>
       </div>
     </div>
   </div>
 </div>
+
+<button type="submit" class="govuk-button">
+  Edit information
+</button>
 
 <!-- Spacer -->
 <div class="govuk-grid-row">
@@ -65,29 +68,33 @@ GOV.UK Prototype Kit
 
   <ul class="govuk-tabs__list">
     <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#cases">
-        Cases
-      </a>
-    </li>
-    <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#notes">
         Notes
       </a>
     </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#caseload">
+        Caseload
+      </a>
+    </li>
   </ul>
 
-  <section class="govuk-tabs__panel" id="cases">
-    <table class="govuk-table">
+  <section class="govuk-tabs__panel" id="caseload">
+    <table class="govuk-table responsive tablesorter">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col">Prisoner Name</th>
-          <th class="govuk-table__header" scope="col">Prisoner Number</th>
-          <th class="govuk-table__header" scope="col">Arrival Date</th>
-          <th class="govuk-table__header" scope="col">Release Date</th>
-          <th class="govuk-table__header" scope="col">Tier</th>
-          <th class="govuk-table__header" scope="col">Allocation date</th>
-          <th class="govuk-table__header" scope="col">Role</th>
-          <th class="govuk-table__header" scope="col">Action</th>
+          <th class="govuk-table__header" scope="col"><a href='#'
+                class='table-sorter__link'>Prisoner Name</th>
+          <th class="govuk-table__header sorter-false" scope="col">Prisoner Number</th>
+          <th class="govuk-table__header sorter-false" scope="col">Arrival Date</th>
+          <th class="govuk-table__header sorter-false" scope="col">Release Date</th>
+          <th class="govuk-table__header header-width__8" scope="col"><a href='#'
+                class='table-sorter__link'>Tier</th>
+          <th class="govuk-table__header" scope="col"><a href='#'
+                class='table-sorter__link'>Allocation date</th>
+          <th class="govuk-table__header" scope="col"><a href='#'
+                class='table-sorter__link'>Role</th>
+          <th class="govuk-table__header sorter-false" scope="col">Action</th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
@@ -101,7 +108,8 @@ GOV.UK Prototype Kit
           <td class="govuk-table__cell">{{prisoner.tier}}</td>
           <td class="govuk-table__cell">{{prisoner.allocation_date}}</td>
           <td class="govuk-table__cell">Responsible</td>
-          <td class="govuk-table__cell"><a href="/prototype/prisoner/{{prisoner.id}}">Reallocate</a></td>
+          <td class="govuk-table__cell"><a
+              href="/prototype/prisoner/{{prisoner.id}}">View</a></td>
         </tr>
         {% endif %}
         {% endfor %}
