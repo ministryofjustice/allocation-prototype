@@ -65,11 +65,6 @@ router.get('/prototype/override_and_confirm_allocation/:prisoner_id/:pom_id', fu
 })
 
 
-router.post('/prototype/confirm_tiering/:prisoner_id', function (req, res) {
-  confirmTiering(req)
-  res.redirect('/prototype/allocations#awaiting-tiering')
-})
-
 router.get('/prototype/allocatepom/:prisoner_id/:pom_id', function (req, res) {
   let prisonerIndex = getPrisonerIndex(req, req.params.prisoner_id)
   let pomIndex = getPomIndex(req, req.params.pom_id)
@@ -77,18 +72,6 @@ router.get('/prototype/allocatepom/:prisoner_id/:pom_id', function (req, res) {
   res.redirect('/prototype/allocations#awaiting-allocation')
 })
 
-function confirmTiering(req) {
-  var prisoners = req.session.data.prisoners;
-  var prisonerIndex = null;
-  prisoners.forEach(function(prisoner, index) {
-    if (prisoner.id === req.params.prisoner_id) {
-      prisonerIndex = index;
-    }
-  });
-  var prisoner = req.session.data.prisoners[prisonerIndex]
-  prisoner.pom_type = req.session.data['allocate']
-  req.session.data['allocate'] = null
-}
 
 function allocatePom(req, prisonerIndex, pomIndex) {
   req.session.data.prisoners[prisonerIndex].allocated = true
@@ -117,20 +100,6 @@ function getPomIndex(req, id) {
     }
   });
   return pomIndex;
-}
-
-function tierPrisoner(req) {
-  var prisoners = req.session.data.prisoners;
-  var prisonerIndex = null;
-  prisoners.forEach(function(prisoner, index) {
-    if (prisoner.id === req.params.id) {
-      prisonerIndex = index;
-    }
-  });
-  var pomType = Math.random() < 0.5 ? "Prison-POM" : "Probation-POM";
-  var prisoner = req.session.data.prisoners[prisonerIndex]
-  prisoner.tier = "C";
-  prisoner.pom_type = pomType
 }
 
 module.exports = router

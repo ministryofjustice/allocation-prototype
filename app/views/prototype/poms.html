@@ -35,77 +35,21 @@ GOV.UK Prototype Kit
 
   <section class='govuk-tabs__panel hmpps-probation__section' id='active'>
     <h2 class='govuk-heading-1'>Probation POM</h2>
-    <table class="govuk-table responsive tablesorter">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header sorter-false" scope="col">POM name</th>
-          <th class="govuk-table__header sorter-false" scope="col">Tier A
-            cases</th>
-          <th class="govuk-table__header sorter-false" scope="col">Tier B
-            cases</th>
-          <th class="govuk-table__header sorter-false" scope="col">Tier C
-            cases</th>
-          <th class="govuk-table__header sorter-false" scope="col">Tier D
-            cases</th>
-          <th class="govuk-table__header sorter-false" scope="col">Total</th>
-          <th class="govuk-table__header sorter-false" scope="col">Working
-            pattern</th>
-          <th class="govuk-table__header sorter-false" scope="col">Action</th>
-        </tr>
-      </thead>
+    {% include "../includes/poms_table_header.html" %}
       <tbody class="govuk-table__body">
         {% for pom in probationPoms %}
           {% if pom.status == 'Active' %}
-          <tr class="govuk-table__row">
-            <td aria-label="POM name" class="govuk-table__cell"><a
-                                      href="/prototype/pom/{{pom.id}}">{{ pom |
-                                      personName }}</a></td>
-            <td aria-label="POM tier A cases" class="govuk-table__cell">{{ pom.tier_a }}</td>
-            <td aria-label="POM tier B cases" class="govuk-table__cell">{{ pom.tier_b }}</td>
-            <td aria-label="POM tier C cases" class="govuk-table__cell">{{ pom.tier_c }}</td>
-            <td aria-label="POM tier D cases" class="govuk-table__cell">{{ pom.tier_d }}</td>
-            <td aria-label="Total cases" class="govuk-table__cell">{{ pom.total }}</td>
-            <td aria-label="Working pattern" class="govuk-table__cell">{{ pom.working_pattern }}</td>
-            <td aria-label="Action" class="govuk-table__cell"><a href="/prototype/pom/{{pom.id}}">View</a></td>
-          </tr>
+          {% include "../includes/poms_table_cells.html" %}
           {% endif %}
         {% endfor %}
       </tbody>
     </table>
     <h2 class='govuk-heading-1'>Prison POM</h2>
-    <table class="govuk-table responsive tablesorter">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header sorter-false" scope="col">POM name</th>
-          <th class="govuk-table__header sorter-false" scope="col">Tier A
-            cases</th>
-          <th class="govuk-table__header sorter-false" scope="col">Tier B
-            cases</th>
-          <th class="govuk-table__header sorter-false" scope="col">Tier C
-            cases</th>
-          <th class="govuk-table__header sorter-false" scope="col">Tier D
-            cases</th>
-          <th class="govuk-table__header sorter-false" scope="col">Total</th>
-          <th class="govuk-table__header sorter-false" scope="col">Working
-            pattern</th>
-          <th class="govuk-table__header sorter-false" scope="col">Action</th>
-        </tr>
-      </thead>
       <tbody class="govuk-table__body">
+        {% include "../includes/poms_table_header.html" %}
         {% for pom in prisonPoms %}
           {% if pom.status == 'Active' %}
-          <tr class="govuk-table__row">
-            <td aria-label="POM name" class="govuk-table__cell"><a
-                                      href="/prototype/pom/{{pom.id}}">{{ pom |
-                                      personName }}</a></td>
-            <td aria-label="POM tier A cases" class="govuk-table__cell">{{ pom.tier_a }}</td>
-            <td aria-label="POM tier B cases" class="govuk-table__cell">{{ pom.tier_b }}</td>
-            <td aria-label="POM tier C cases" class="govuk-table__cell">{{ pom.tier_c }}</td>
-            <td aria-label="POM tier D cases" class="govuk-table__cell">{{ pom.tier_d }}</td>
-            <td aria-label="Total cases" class="govuk-table__cell">{{ pom.total }}</td>
-            <td aria-label="Working pattern" class="govuk-table__cell">{{ pom.working_pattern }}</td>
-            <td aria-label="Action" class="govuk-table__cell"><a href=''>View</a></td>
-          </tr>
+          {% include "../includes/poms_table_cells.html" %}
           {% endif %}
         {% endfor %}
       </tbody>
@@ -114,78 +58,22 @@ GOV.UK Prototype Kit
 
   <section class='govuk-tabs__panel' id='inactive'>
     <h2 class='govuk-heading-1'>Probation POM</h2>
-    <table class="govuk-table responsive tablesorter">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header sorter-false" scope="col">POM name</th>
-          <th class="govuk-table__header sorter-false" scope="col">Tier A
-            cases</th>
-          <th class="govuk-table__header sorter-false" scope="col">Tier B
-            cases</th>
-          <th class="govuk-table__header sorter-false" scope="col">Tier C
-            cases</th>
-          <th class="govuk-table__header sorter-false" scope="col">Tier D
-            cases</th>
-          <th class="govuk-table__header sorter-false" scope="col">Total</th>
-          <th class="govuk-table__header sorter-false" scope="col">Working
-            pattern</th>
-          <th class="govuk-table__header sorter-false" scope="col">Action</th>
-        </tr>
-      </thead>
       <tbody class="govuk-table__body">
+        {% include "../includes/poms_table_header.html" %}
         {% for pom in probationPoms %}
           {% if pom.status == 'Inactive' %}
-          <tr class="govuk-table__row">
-            <td aria-label="POM name" class="govuk-table__cell"><a
-                                      href="/prototype/pom/{{pom.id}}">{{ pom |
-                                      personName }}</a></td>
-            <td aria-label="POM tier A cases" class="govuk-table__cell">{{ pom.tier_a }}</td>
-            <td aria-label="POM tier B cases" class="govuk-table__cell">{{ pom.tier_b }}</td>
-            <td aria-label="POM tier C cases" class="govuk-table__cell">{{ pom.tier_c }}</td>
-            <td aria-label="POM tier D cases" class="govuk-table__cell">{{ pom.tier_d }}</td>
-            <td aria-label="Total cases" class="govuk-table__cell">{{ pom.total }}</td>
-            <td aria-label="Working pattern" class="govuk-table__cell">{{ pom.working_pattern }}</td>
-            <td aria-label="Action" class="govuk-table__cell"><a href="/prototype/pom/{{pom.id}}">View</a></td>
-          </tr>
+          {% include "../includes/poms_table_cells.html" %}
           {% endif %}
         {% endfor %}
       </tbody>
     </table>
 
     <h2 class='govuk-heading-1'>Prison POM</h2>
-    <table class="govuk-table responsive tablesorter">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header sorter-false" scope="col">POM name</th>
-          <th class="govuk-table__header sorter-false" scope="col">Tier A
-            cases</th>
-          <th class="govuk-table__header sorter-false" scope="col">Tier B
-            cases</th>
-          <th class="govuk-table__header sorter-false" scope="col">Tier C
-            cases</th>
-          <th class="govuk-table__header sorter-false" scope="col">Tier D
-            cases</th>
-          <th class="govuk-table__header sorter-false" scope="col">Total</th>
-          <th class="govuk-table__header sorter-false" scope="col">Working
-            pattern</th>
-          <th class="govuk-table__header sorter-false" scope="col">Action</th>
-        </tr>
-      </thead>
       <tbody class="govuk-table__body">
+        {% include "../includes/poms_table_header.html" %}
         {% for pom in prisonPoms %}
           {% if pom.status == 'Inactive' %}
-          <tr class="govuk-table__row">
-            <td aria-label="POM name" class="govuk-table__cell"><a
-                                      href="/prototype/pom/{{pom.id}}">{{ pom |
-                                      personName }}</a></td>
-            <td aria-label="POM tier A cases" class="govuk-table__cell">{{ pom.tier_a }}</td>
-            <td aria-label="POM tier B cases" class="govuk-table__cell">{{ pom.tier_b }}</td>
-            <td aria-label="POM tier C cases" class="govuk-table__cell">{{ pom.tier_c }}</td>
-            <td aria-label="POM tier D cases" class="govuk-table__cell">{{ pom.tier_d }}</td>
-            <td aria-label="Total cases" class="govuk-table__cell">{{ pom.total }}</td>
-            <td aria-label="Working pattern" class="govuk-table__cell">{{ pom.working_pattern }}</td>
-            <td aria-label="Action" class="govuk-table__cell"><a href=''>View</a></td>
-          </tr>
+          {% include "../includes/poms_table_cells.html" %}
           {% endif %}
         {% endfor %}
       </tbody>
