@@ -1,0 +1,75 @@
+{% extends "layout_logged_in.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back();"
+}) }}
+
+{% set prisoner = data.prisoners | getPrisoner(prisoner_id) %}
+{% set pom =  data.poms | getPom(pom_id) %}
+
+<div>
+  <h1 class="govuk-heading-xl govuk-!-margin-top-4">Confirm allocation</h1>
+  <p class="govuk-body">You are allocating {{prisoner | personName}} to {{pom |
+  personName}} ({{pom.type}})</h3>
+  <p class="govuk-body">We'll email them using the email below to let them know about their new allocation</h3>
+  <p class="govuk-body govuk-!-font-size-20
+  govuk-!-margin-top-6">{{pom.email}}</p>
+</div>
+<div class='govuk-!-margin-top-6'>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="override-conditional-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+      <h1 class="govuk-fieldset__heading">Choose reason for changing
+        recommended grade</h1>
+    </legend>
+    <div class="govuk-checkboxes" data-module="checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="override-1" name="override"
+        type="checkbox" value="complex" data-aria-controls="override-1">
+        <label class="govuk-label govuk-checkboxes__label"
+          for="override-1">Prisoner assessed as too complex for Prison officer POM</label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="override-2" name="override"
+        type="checkbox" value="no-staff" data-aria-controls="override-2">
+        <label class="govuk-label govuk-checkboxes__label"
+          for="override-2">No avaliable staff at recommended
+          grade</label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="override-3" name="override"
+        type="checkbox" value="continuity" data-aria-controls="overide-3">
+        <label class="govuk-label govuk-checkboxes__label"
+          for="override-3">Maintain continuity of previous POM</label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="override-conditional-3" name="override" type="checkbox" value="other" data-aria-controls="override-4">
+        <label class="govuk-label govuk-checkboxes__label"
+          for="override-conditional-4">Other</label>
+      </div>
+      <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="override-4">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="provide-detail">Please provide detail
+          here</label>
+         <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="3" aria-describedby="more-detail-hint"></textarea>
+        </div>
+
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+  <a href="/prototype/allocatePom/{{prisoner.id}}/{{pom.id}}" role="button" class="govuk-button govuk-button">
+    Complete allocation
+  </a>
+</div>
+
+{% endblock %}

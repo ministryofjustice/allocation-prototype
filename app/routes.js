@@ -59,6 +59,12 @@ router.get('/prototype/confirm_allocation/:prisoner_id/:pom_id', function (req, 
   res.render('prototype/confirm_allocation', {'prisoner_id': req.params.prisoner_id, 'pom_id': req.params.pom_id})
 })
 
+
+router.get('/prototype/override_and_confirm_allocation/:prisoner_id/:pom_id', function (req, res) {
+  res.render('prototype/override_and_confirm_allocation', {'prisoner_id': req.params.prisoner_id, 'pom_id': req.params.pom_id})
+})
+
+
 router.post('/prototype/confirm_tiering/:prisoner_id', function (req, res) {
   confirmTiering(req)
   res.redirect('/prototype/allocations#awaiting-tiering')
