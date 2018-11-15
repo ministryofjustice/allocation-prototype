@@ -13,6 +13,34 @@
 
   <h1 class="govuk-heading-xl">Dashboard</h1>
 
+  <h3 class="govuk-heading-m">Search</h3>
+  <hr class="line">
+
+  <div class='hmpps-search-component'>
+    <div class='hmpps-search-component__menu'>
+      <div class="govuk-form-group hmpps-search-component-element__input-half">
+        <label class="govuk-label" for="name">
+          Name
+        </label>
+        <input class="govuk-input" id="name" name="name" type="text">
+      </div>
+
+      <div class="govuk-form-group hmpps-search-component-element__dropdown">
+        <label class="govuk-label" for="sort">
+          Type
+        </label>
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="all">Prisoner</option>
+          <option value="all">Jay (aka Golden ratio interaction designer) </option>
+        </select>
+      </div>
+
+      <button type="submit" class="govuk-button
+      hmpps-search-component-element__button">
+        Search
+      </button>
+    </div>
+  </div>
 
   <h3 class="govuk-heading-m">Allocations</h3>
   <hr class="line">
