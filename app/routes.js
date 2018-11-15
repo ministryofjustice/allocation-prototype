@@ -7,14 +7,8 @@ router.get('/', function (req, res) {
   res.redirect(302, '/prototype')
 })
 
-router.get('/prototype/', function (req, res) {
-  let loggedIn = req.session.data['logged_in']
-
-  if (loggedIn === false) {
-    res.redirect('/prototype/login')
-  } else {
-    res.render('prototype/index')
-  }
+router.get('/caseload', function(req, res) {
+  res.render('prototype/caseload')
 })
 
 router.post('/login', function (req, res) {
@@ -29,7 +23,17 @@ router.post('/login', function (req, res) {
   }
 })
 
-router.get('/prototype/pom/:id', function(req, res) {
+router.get('/prototype/', function (req, res) {
+  let loggedIn = req.session.data['logged_in']
+
+  if (loggedIn === false) {
+    res.redirect('/prototype/login')
+  } else {
+    res.render('prototype/index')
+  }
+})
+
+router.get('/prototype/pom/:id', function (req, res) {
   let pomIndex = getPomIndex(req, req.params.id)
   res.render('prototype/pom', {'pomIndex': pomIndex})
 })
