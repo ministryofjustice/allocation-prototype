@@ -50,65 +50,17 @@ href: "javascript:window.history.back();"
         <h3 class="govuk-heading-m">{{prisoner.release_date}}</h3>
       </div>
       <div class="govuk-grid-column-one-third">
-        <span class="govuk-caption-m">Case allocation</span>
-        <h3 class="govuk-heading-m">NPS</h3>
-      </div>
-    </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-third">
-        <span class="govuk-caption-m">Tier calculation</span>
-        <h3 class="govuk-heading-m">
-          {% if prisoner.tier %}
-          {{ prisoner.tier }}
-          {% else %}
-          None
-          {% endif %}
-        </h3>
-      </div>
-      <div class="govuk-grid-column-one-third">
-        <span class="govuk-caption-m">Prisoner allocation</span>
-        <h3 class="govuk-heading-m">Prison POM</h3>
-      </div>
-      <div class="govuk-grid-column-one-third">
-        <span class="govuk-caption-m">Current responsibility</span>
-        <h3 class="govuk-heading-m">Prison</h3>
-      </div>
-    </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-third">
-        <span class="govuk-caption-m">Primary POM</span>
-        <h3 class="govuk-heading-m"><a href=''>Jara-Duncan, Laura</a></h3>
-      </div>
-      <div class="govuk-grid-column-one-third">
-        <span class="govuk-caption-m">Supporting POM</span>
-        <h3 class="govuk-heading-m"><a href=''>Add a POM</a></h3>
-      </div>
-      <div class="govuk-grid-column-one-third">
-        <span class="govuk-caption-m">COM</span>
-        <h3 class="govuk-heading-m">Unallocated</h3>
-      </div>
-    </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-third">
-        <span class="govuk-caption-m">Local divisional unit</span>
-        <h3 class="govuk-heading-m">Plymouth, Cornwall and Isles of
-          Scilly</h3>
-      </div>
-      <div class="govuk-grid-column-one-third">
-        <span class="govuk-caption-m">Key worker</span>
-        <h3 class="govuk-heading-m">Southgate, Gareth</h3>
+        <span class="govuk-caption-m">Release date</span>
+        <h3 class="govuk-heading-m">{{prisoner.release_date}}</h3>
       </div>
     </div>
     <div class='govuk-grid-row'>
-      <div class='govuk-grid-column-one-third'>
-        <a href='' class="govuk-button">
-          View NOMIS profile
-        </a>
-      </div>
-      <div class='govuk-grid-column-one-third'>
-        <a href='' class="govuk-button">
-          Re-allocate prisoner
-        </a>
+      <div class='govuk-grid-column-full'>
+        <div class='hmpps-nomis-button'>
+          <a href='' class="govuk-button">
+            View NOMIS profile
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -129,7 +81,7 @@ href: "javascript:window.history.back();"
     </li>
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#sentence-and-tier">
-        Sentence and tier information
+        Prisoner information
       </a>
     </li>
   </ul>
@@ -179,7 +131,7 @@ href: "javascript:window.history.back();"
     </div>
   </section>
   <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="case-notes">
-    <h2 class="govuk-heading-l">Case notes</h2>
+    <h2 class="govuk-heading-l">Case history</h2>
     <table class="govuk-table">
       <thead class="govuk-table__head">
       <tr class="govuk-table__row">

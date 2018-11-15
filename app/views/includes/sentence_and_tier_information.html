@@ -7,7 +7,13 @@
   </tr>
   <tr class="govuk-table__row">
     <td class="govuk-table__cell">Main offence</td>
-    <td class="govuk-table__cell table_cell__right_align">Sexual activity with a female child under 16</td>
+    <td class="govuk-table__cell table_cell__right_align">
+      {% if prisoner.main_offence %}
+        {{ prisoner.main_offence }}
+      {% else %}
+        Sexual activity with a female child under 16
+      {% endif %}
+    </td>
   </tr>
   <tr class="govuk-table__row">
     <td class="govuk-table__cell">Release date</td>
@@ -24,23 +30,53 @@
   </tr>
   <tr class="govuk-table__row">
     <td class="govuk-table__cell">Case allocation</td>
-    <td class="govuk-table__cell table_cell__right_align">National Probation Service (NPS)</td>
+    <td class="govuk-table__cell table_cell__right_align">
+      {% if prisoner.tier %}
+        National Probation Service (NPS)
+      {% else %} 
+        Awaiting
+      {% endif %}
+    </td>
   </tr>
   <tr class="govuk-table__row">
     <td class="govuk-table__cell">Risk of Serious Recidivism (RSR) score</td>
-    <td class="govuk-table__cell table_cell__right_align">3.3%</td>
+    <td class="govuk-table__cell table_cell__right_align">
+      {% if prisoner.rsr_score %}
+        {{ prisoner.rsr_score }}
+      {% else %} 
+        Awaiting
+      {% endif %}
+    </td>
   </tr>
   <tr class="govuk-table__row">
     <td class="govuk-table__cell">Offender Group Reconviction Scale (OGRS)</td>
-    <td class="govuk-table__cell table_cell__right_align">91%</td>
+    <td class="govuk-table__cell table_cell__right_align">
+      {% if prisoner.ogrs_score %}
+        {{ prisoner.ogrs_score }}
+      {% else %} 
+        Awaiting
+      {% endif %}
+    </td>
   </tr>
   <tr class="govuk-table__row">
     <td class="govuk-table__cell">Risk of Serious Harm (ROSH) score</td>
-    <td class="govuk-table__cell table_cell__right_align">Medium</td>
+    <td class="govuk-table__cell table_cell__right_align">
+      {% if prisoner.rosh_score %}
+        {{ prisoner.rosh_score }}
+      {% else %} 
+        Awaiting
+      {% endif %}
+    </td>
   </tr>
   <tr class="govuk-table__row">
     <td class="govuk-table__cell">Tiering calculation</td>
-    <td class="govuk-table__cell table_cell__right_align">{{ prisoner.tier }}</td>
+    <td class="govuk-table__cell table_cell__right_align">
+      {% if prisoner.tier %}
+        {{ prisoner.tier }}
+      {% else %} 
+        Awaiting
+      {% endif %}
+    </td>
   </tr>
   </tbody>
 </table>

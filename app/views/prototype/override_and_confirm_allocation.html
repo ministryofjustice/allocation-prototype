@@ -14,10 +14,18 @@
 {% set prisoner = data.prisoners | getPrisoner(prisoner_id) %}
 {% set pom =  data.poms | getPom(pom_id) %}
 
+{% if prisoner.pom_type == 'Prison' %}
+  {% set overridePomType = 'Probation' %}
+  {% set recommendedPomType = 'Prison' %}
+{% elif prisoner.pom_type == 'Probation' %}
+  {% set overridePomType = 'Prison' %}
+  {% set recommendedPomType = 'Probation' %}
+{% endif %}
+
 <div>
   <h1 class="govuk-heading-xl govuk-!-margin-top-4">Confirm allocation</h1>
   <p class="govuk-body">You are allocating {{prisoner | personName}} to {{pom |
-  personName}} ({{pom.type}})</h3>
+  personName}} ({{overridePomType}}-POM)</h3>
   <p class="govuk-body">We'll email them using the email below to let them know about their new allocation</h3>
   <p class="govuk-body govuk-!-font-size-20
   govuk-!-margin-top-6">{{pom.email}}</p>
@@ -35,7 +43,9 @@
         <input class="govuk-checkboxes__input" id="override-1" name="override"
         type="checkbox" value="complex" data-aria-controls="override-1">
         <label class="govuk-label govuk-checkboxes__label"
-          for="override-1">Prisoner assessed as too complex for Prison officer POM</label>
+          for="override-1">
+          Prisoner assessed as too complex for {{ recommendedPomType }} officer POM
+        </label>
       </div>
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="override-2" name="override"
