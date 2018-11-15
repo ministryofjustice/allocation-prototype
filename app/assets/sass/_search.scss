@@ -1,0 +1,35 @@
+.hmpps-search-component {
+  background-color:  govuk-colour("grey-4");
+  padding: 10px 3px;
+  margin-left: 0;
+  margin-right: 0;
+
+  &__menu {
+    display: flex;
+  }
+}
+
+.hmpps-search-component-element {
+  &__input, &__dropdown, &__button {
+    display: inline-block;
+    margin: 0 0.75%;
+    align-self: flex-end;
+
+    select {
+      background-color: white;
+    }
+  }
+
+  &__input {
+    width: 24%;
+  }
+
+  &__dropdown {
+    width: 18%;
+  }
+
+  &__button {
+    width: 14%;
+    margin-bottom: 2px;
+  }
+}
