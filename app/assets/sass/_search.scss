@@ -10,7 +10,7 @@
 }
 
 .hmpps-search-component-element {
-  &__input, &__dropdown, &__button {
+  &__input, &__dropdown, &__button, &__input-half, &__dropdown-quarter, &__button-quarter {
     display: inline-block;
     margin: 0 0.75%;
     align-self: flex-end;
@@ -24,6 +24,10 @@
     width: 24%;
   }
 
+  &__input-half {
+    width: 50%;
+  }
+
   &__dropdown {
     width: 18%;
   }
@@ -32,4 +36,14 @@
     width: 14%;
     margin-bottom: 2px;
   }
+
+  &__dropdown-quarter {
+    width: 18%;
+  }
+
+  &__button-quarter {
+    width: 14%;
+    margin-bottom: 2px;
+  }
+
 }

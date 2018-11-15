@@ -1,6 +1,18 @@
 .box {
-  @include govuk-responsive-padding(2);
-  @include govuk-responsive-margin(4, bottom);
-  border: 1px solid $govuk-border-colour;
-  min-height: 130px
+  @include govuk-responsive-margin(0, bottom);
+  @include govuk-responsive-padding(0);
+  min-height: 130px;
 }
+
+.top-box {
+  background-color: govuk-colour("grey-3");
+  padding: 10px;
+  margin-bottom: 0;
+}
+
+.bottom-box {
+  background-color: govuk-colour("grey-4");
+  padding: 10px;
+}
+
+
