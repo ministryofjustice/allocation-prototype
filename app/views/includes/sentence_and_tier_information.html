@@ -3,11 +3,11 @@
   <tbody class="govuk-table__body">
   <tr class="govuk-table__row">
     <td class="govuk-table__header" scope="row">Offences</td>
-    <td class="govuk-table__cell table_cell__right_align"></td>
+    <td class="govuk-table__cell table_cell__left_align"></td>
   </tr>
   <tr class="govuk-table__row">
-    <td class="govuk-table__cell">Main offence</td>
-    <td class="govuk-table__cell table_cell__right_align">
+    <td class="govuk-table__cell hmpps-table-cell__key">Main offence</td>
+    <td class="govuk-table__cell table_cell__left_align">
       {% if prisoner.main_offence %}
         {{ prisoner.main_offence }}
       {% else %}
@@ -16,21 +16,21 @@
     </td>
   </tr>
   <tr class="govuk-table__row">
-    <td class="govuk-table__cell">Release date</td>
-    <td class="govuk-table__cell table_cell__right_align">{{ prisoner.release_date }}</td>
+    <td class="govuk-table__cell hmpps-table-cell__key">Release date</td>
+    <td class="govuk-table__cell table_cell__left_align">{{ prisoner.release_date }}</td>
   </tr>
   </tbody>
 </table>
-<!-- Tiering information -->
+<!-- Case information -->
 <table class="govuk-table govuk-!-margin-top-8">
   <tbody class="govuk-table__body">
   <tr class="govuk-table__row">
-    <td class="govuk-table__header" scope="row">Tiering information</td>
-    <td class="govuk-table__cell table_cell__right_align"></td>
+    <td class="govuk-table__header" scope="row">Case information</td>
+    <td class="govuk-table__cell table_cell__left_align"></td>
   </tr>
   <tr class="govuk-table__row">
-    <td class="govuk-table__cell">Case allocation</td>
-    <td class="govuk-table__cell table_cell__right_align">
+    <td class="govuk-table__cell hmpps-table-cell__key">Case allocation</td>
+    <td class="govuk-table__cell table_cell__left_align">
       {% if prisoner.tier %}
         National Probation Service (NPS)
       {% else %} 
@@ -39,8 +39,8 @@
     </td>
   </tr>
   <tr class="govuk-table__row">
-    <td class="govuk-table__cell">Risk of Serious Recidivism (RSR) score</td>
-    <td class="govuk-table__cell table_cell__right_align">
+    <td class="govuk-table__cell hmpps-table-cell__key">Risk of Serious Recidivism (RSR) score</td>
+    <td class="govuk-table__cell table_cell__left_align">
       {% if prisoner.rsr_score %}
         {{ prisoner.rsr_score }}
       {% else %} 
@@ -49,8 +49,8 @@
     </td>
   </tr>
   <tr class="govuk-table__row">
-    <td class="govuk-table__cell">Offender Group Reconviction Scale (OGRS)</td>
-    <td class="govuk-table__cell table_cell__right_align">
+    <td class="govuk-table__cell hmpps-table-cell__key">Offender Group Reconviction Scale (OGRS)</td>
+    <td class="govuk-table__cell table_cell__left_align">
       {% if prisoner.ogrs_score %}
         {{ prisoner.ogrs_score }}
       {% else %} 
@@ -59,8 +59,8 @@
     </td>
   </tr>
   <tr class="govuk-table__row">
-    <td class="govuk-table__cell">Risk of Serious Harm (ROSH) score</td>
-    <td class="govuk-table__cell table_cell__right_align">
+    <td class="govuk-table__cell hmpps-table-cell__key">Risk of Serious Harm (ROSH) score</td>
+    <td class="govuk-table__cell table_cell__left_align">
       {% if prisoner.rosh_score %}
         {{ prisoner.rosh_score }}
       {% else %} 
@@ -69,14 +69,87 @@
     </td>
   </tr>
   <tr class="govuk-table__row">
-    <td class="govuk-table__cell">Tiering calculation</td>
-    <td class="govuk-table__cell table_cell__right_align">
+    <td class="govuk-table__cell hmpps-table-cell__key">Tiering calculation</td>
+    <td class="govuk-table__cell table_cell__left_align">
       {% if prisoner.tier %}
         {{ prisoner.tier }}
       {% else %} 
         Awaiting
       {% endif %}
     </td>
+  </tr>
+  </tbody>
+</table>
+<!-- Allocation information -->
+<table class="govuk-table govuk-!-margin-top-8">
+  <tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row">Allocation</td>
+    <td class="govuk-table__cell table_cell__left_align"></td>
+    <td class="govuk-table__cell table_cell__right_align"></td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell hmpps-table-cell__key">Prisoner allocation</td>
+    <td class="govuk-table__cell table_cell__left_align">
+      {% if prisoner.pom_type %}
+      {{ prisoner.pom_type }} POM
+      {% else %} 
+        Probation POM
+      {% endif %}
+    </td>
+    <td class="govuk-table__cell table_cell__right_align">
+      <a href='#'>Change</a>
+    </td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell hmpps-table-cell__key">Current responsibility</td>
+    <td class="govuk-table__cell table_cell__left_align">
+      {% if prisoner.pom_type %}
+        {{ prisoner.pom_type }}
+      {% else %} 
+        Probation
+      {% endif %}
+    </td>
+    <td class="govuk-table__cell table_cell__right_align"></td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell hmpps-table-cell__key">Key worker</td>
+    <td class="govuk-table__cell table_cell__left_align">
+      Smith, Bob
+    </td>
+    <td class="govuk-table__cell table_cell__right_align"></td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell hmpps-table-cell__key">Primary POM</td>
+    <td class="govuk-table__cell table_cell__left_align">
+      Unallocated
+    </td>
+    <td class="govuk-table__cell table_cell__right_align">
+      <a href='#'>Change</a>
+    </td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell hmpps-table-cell__key">Secondary POM</td>
+    <td class="govuk-table__cell table_cell__left_align">
+      Unallocated
+    </td>
+    <td class="govuk-table__cell table_cell__right_align">
+      <a href='#'>Change</a>
+    </td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell hmpps-table-cell__key">COM</td>
+    <td class="govuk-table__cell table_cell__left_align">
+      Unallocated
+    </td>
+    <td class="govuk-table__cell table_cell__right_align"></td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell hmpps-table-cell__key">LDU</td>
+    <td class="govuk-table__cell table_cell__left_align">
+      Plymouth, Cornwall and Isles of Scilly
+    </td>
+    <td class="govuk-table__cell table_cell__right_align"></td>
   </tr>
   </tbody>
 </table>

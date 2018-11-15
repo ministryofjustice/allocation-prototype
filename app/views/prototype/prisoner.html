@@ -75,13 +75,13 @@ href: "javascript:window.history.back();"
       </a>
     </li>
     <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#case-notes">
-        Case notes
+      <a class="govuk-tabs__tab" href="#sentence-and-tier">
+        Prisoner information
       </a>
     </li>
     <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#sentence-and-tier">
-        Prisoner information
+      <a class="govuk-tabs__tab" href="#case-notes">
+        Case management
       </a>
     </li>
   </ul>
@@ -131,15 +131,7 @@ href: "javascript:window.history.back();"
     </div>
   </section>
   <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="case-notes">
-    <h2 class="govuk-heading-l">Case history</h2>
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-      </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-      </tbody>
-    </table>
+    {% include "../includes/pom_completion_information.html" %}
   </section>
   <section class="govuk-tabs__panel govuk-tabs__panel--hidden"
            id="sentence-and-tier">
