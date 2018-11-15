@@ -24,4 +24,9 @@ $govuk-global-styles: true;
 @import "hmpps_header";
 @import "components/box";
 @import "components/button";
-@import "components/timeline"
+@import "components/timeline";
+
+.line {
+  margin-top: -15px;
+  margin-bottom: 20px;
+}
