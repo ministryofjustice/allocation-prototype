@@ -55,8 +55,7 @@
             </a>
           </div>
           <div>
-            <a href="/prototype/allocations.html#allocated"
-              class="govuk-!-font-weight-bold govuk-!-font-size-24">Allocated prisoners</a>
+            <a href="/prototype/allocations.html#allocated" class="govuk-!-font-weight-bold govuk-!-font-size-30">Allocated prisoners</a>
           </div>
         </div>
         <div class="bottom-box">
@@ -68,14 +67,12 @@
       <div class="box">
         <div class="top-box">
           <div>
-            <a href="/prototype/allocations.html#awaiting-allocation"
-              class="govuk-!-font-weight-bold govuk-!-font-size-48">
+            <a href="/prototype/allocations.html#awaiting-allocation" class="govuk-!-font-weight-bold govuk-!-font-size-36">
               {{unallocatedPrisoners.length}}
             </a>
           </div>
           <div>
-            <a href="/prototype/allocations.html#awaiting-allocation"
-              class="govuk-!-font-weight-bold govuk-!-font-size-24">Awaiting allocation</a>
+            <a href="/prototype/allocations.html#awaiting-allocation" class="govuk-!-font-weight-bold govuk-!-font-size-30">Awaiting allocation</a>
           </div>
         </div>
         <div class="bottom-box">
@@ -86,16 +83,13 @@
     <div class="govuk-grid-column-one-third">
       <div>
         <div class="top-box">
-          <div>
-            <a href="/prototype/allocations.html#awaiting-tiering"
-              class="govuk-!-font-weight-bold  govuk-!-font-size-48">
-              {{untieredPrisoners.length}}
-            </a>
-          </div>
-          <div>
-          <a href="/prototype/allocations.html#awaiting-tiering"
-            class="govuk-!-font-weight-bold govuk-!-font-size-24">Awaiting tiering</a>
-          </div>
+          <p>
+          <a href="/prototype/allocations.html#awaiting-tiering" class="govuk-!-font-weight-bold  govuk-!-font-size-36">
+            {{untieredPrisoners.length}}
+          </a>
+          <br/>
+          <a href="/prototype/allocations.html#awaiting-tiering" class="govuk-!-font-weight-bold govuk-!-font-size-30">Awaiting tiering</a>
+          </p>
         </div>
         <div class="bottom-box">
           <p>Prisoners who have not yet had their risk tiering completed.</p>
@@ -111,16 +105,13 @@
     <div class="govuk-grid-column-one-third">
       <div>
         <div class="top-box">
-          <div>
-            <a href="/prototype/caseload" class="govuk-!-font-weight-bold
-              govuk-!-font-size-48">
-            {{allocatedPrisoners.length}}
-            </a>
-          </div>
-          <div>
-            <a href="/prototype/caseload" class="govuk-!-font-weight-bold
-              govuk-!-font-size-24">My caseload</a>
-          </div>
+        <p>
+        <a href="/prototype/caseload" class="govuk-!-font-weight-bold govuk-!-font-size-36">
+          {{allocatedPrisoners.length}}
+        </a>
+        <br/>
+        <a href="/prototype/caseload" class="govuk-!-font-weight-bold govuk-!-font-size-30">My caseload</a>
+        </p>
         </div>
         <div class="bottom-box">
           <p>All cases allocated to you.</p>
@@ -130,15 +121,13 @@
     <div class="govuk-grid-column-one-third">
       <div>
         <div class="top-box">
-          <div>
-            <a class="govuk-!-font-weight-bold govuk-!-font-size-48" href="#">
-              {{unallocatedPrisoners.length}}
-            </a>
-          </div>
-          <div>
-            <a href="/prototype/caseload" class="govuk-!-font-weight-bold
-              govuk-!-font-size-24">New cases</a>
-          </div>
+        <p>
+        <a class="govuk-!-font-weight-bold govuk-!-font-size-36" href="/prototype/caseload">
+          {{unallocatedPrisoners.length}}
+        </a>
+        <br/>
+        <a href="/prototype/caseload" class="govuk-!-font-weight-bold govuk-!-font-size-30">New cases</a>
+        </p>
         </div>
         <div class="bottom-box">
           <p>
@@ -150,15 +139,13 @@
     <div class="govuk-grid-column-one-third">
       <div>
         <div class="top-box">
-          <div>
-            <a href="#" class="govuk-!-font-weight-bold govuk-!-font-size-48">
-              {{untieredPrisoners.length}}
-            </a>
-          </div>
-          <div>
-            <a href="#" class="govuk-!-font-weight-bold
-              govuk-!-font-size-24">Approaching handover</a>
-          </div>
+        <p>
+        <a href="/prototype/caseload" class="govuk-!-font-weight-bold govuk-!-font-size-36">
+          {{untieredPrisoners.length}}
+        </a>
+          <br/>
+          <a href="/prototype/caseload" class="govuk-!-font-weight-bold govuk-!-font-size-30">Approaching handover</a>
+        </p>
         </div>
         <div class="bottom-box">
           <p>
@@ -176,16 +163,13 @@
     <div class="govuk-grid-column-one-third">
       <div>
         <div class="top-box">
-          <div>
-            <a href="/prototype/caseload" class="govuk-!-font-weight-bold
-              govuk-!-font-size-48">
-              {{allocatedPrisoners.length}}
-            </a>
-          </div>
-          <div>
-            <a href="/prototype/poms" class="govuk-!-font-weight-bold
-              govuk-!-font-size-24">Active POMS</a>
-          </div>
+        <p>
+        <a href="/prototype/caseload" class="govuk-!-font-weight-bold govuk-!-font-size-36">
+          {{allocatedPrisoners.length}}
+        </a>
+        <br/>
+        <a href="/prototype/poms" class="govuk-!-font-weight-bold govuk-!-font-size-30">Active POMS</a>
+        </p>
         </div>
         <div class="bottom-box">
           <p>
@@ -195,4 +179,6 @@
       </div>
     </div>
   </div>
+
+
 {% endblock %}

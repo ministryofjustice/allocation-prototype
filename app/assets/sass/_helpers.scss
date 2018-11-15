@@ -26,6 +26,10 @@
   background-color: govuk-colour("light-blue");
 }
 
+.hmpps-tag__beta {
+  background-color: govuk-colour("orange")
+}
+
 .timeline ul:after {
   top: 0 !important;
 }
