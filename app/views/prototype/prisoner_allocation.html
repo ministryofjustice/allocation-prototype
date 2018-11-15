@@ -9,6 +9,14 @@
 {% set allocatedPOM = data.poms[prisoner.pomIndex] %}
 {% set poms = data.poms %}
 
+  {% if prisoner.pom_type == 'Prison' %}
+    {% set recommendedPomType = 'Prison officer POM' %}
+    {% set nonRecommendedPomType = 'Probation officer POM' %}
+  {% else %}
+    {% set recommendedPomType = 'Probation officer POM' %}
+    {% set nonRecommendedPomType = 'Prison officer POM' %}
+  {% endif %}
+
   {{ govukBackLink({
       text: "Back",
       href: "javascript:window.history.back();"
@@ -24,13 +32,17 @@
 
   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--invisible">
 
-  <h4 class="govuk-heading-m">Recommendation: Probation officer POM</h4>
+  <h4 class="govuk-heading-m">
+    Recommendation: {{ recommendedPomType }}
+  </h4>
 
   <p>This is based on the prisoner's tiering calculatiion.</p>
 
   <table class="govuk-table responsive">
     <thead class="govuk-table__head">
-      <h2 class="govuk-heading-m">Probation officer POMs</h2>
+      <h2 class="govuk-heading-m">
+        {{ recommendedPomType }}s
+      </h2>
       <tr class="govuk-table__row">
         <th class="govuk-table__header" scope="col">POM name</th>
         <th class="govuk-table__header" scope="col">Previous allocation</th>
@@ -71,7 +83,9 @@
 </div>
 
   <table class="govuk-table responsive">
-      <h2 class="govuk-heading-m">Prison officer POMs</h2>
+      <h2 class="govuk-heading-m">
+        {{ nonRecommendedPomType }}s
+      </h2>
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <th class="govuk-table__header" scope="col">POM name</th>

@@ -31,7 +31,6 @@
         </label>
         <select class="govuk-select" id="sort" name="sort">
           <option value="all">Prisoner</option>
-          <option value="all">Jay (aka Golden ratio interaction designer) </option>
         </select>
       </div>
 
@@ -42,84 +41,108 @@
     </div>
   </div>
 
-  <h3 class="govuk-heading-m">Allocations</h3>
+  <h3 class="govuk-heading-m govuk-!-margin-top-7">Allocations</h3>
   <hr class="line">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
       <div class="box">
         <div class="top-box">
-          <p>
-          <a href="/prototype/allocations.html#allocated" class="govuk-!-font-weight-bold govuk-!-font-size-36">
-            {{allocatedPrisoners.length}}
-          </a>
-          <br/>
-          <a href="/prototype/allocations.html#allocated" class="govuk-!-font-weight-bold govuk-!-font-size-30">Allocated prisoners</a>
-          </p>
+          <div>
+            <a href="/prototype/allocations.html#allocated"
+              class="govuk-!-font-weight-bold govuk-!-font-size-48">
+              {{allocatedPrisoners.length}}
+            </a>
+          </div>
+          <div>
+            <a href="/prototype/allocations.html#allocated"
+              class="govuk-!-font-weight-bold govuk-!-font-size-24">Allocated prisoners</a>
+          </div>
         </div>
         <div class="bottom-box">
-          <p>
-          View all new cases you have been allocated this week
-          </p>
+          <p>All prisoners who have been allocated a Prison Offender Manager.</p>
         </div>
       </div>
     </div>
     <div class="govuk-grid-column-one-third">
       <div class="box">
         <div class="top-box">
-          <p>
-            <a href="/prototype/allocations.html#awaiting-allocation" class="govuk-!-font-weight-bold govuk-!-font-size-36">
+          <div>
+            <a href="/prototype/allocations.html#awaiting-allocation"
+              class="govuk-!-font-weight-bold govuk-!-font-size-48">
               {{unallocatedPrisoners.length}}
             </a>
-            <br/>
-            <a href="/prototype/allocations.html#awaiting-allocation" class="govuk-!-font-weight-bold govuk-!-font-size-30">Awaiting allocation</a>
-          </p>
+          </div>
+          <div>
+            <a href="/prototype/allocations.html#awaiting-allocation"
+              class="govuk-!-font-weight-bold govuk-!-font-size-24">Awaiting allocation</a>
+          </div>
         </div>
         <div class="bottom-box">
-          <p>
-            View all new cases you have been allocated this week
-          </p>
+          <p>Prisoners who need to be allocated to a Prison Offender Manager.</p>
         </div>
       </div>
     </div>
     <div class="govuk-grid-column-one-third">
       <div>
         <div class="top-box">
-          <p>
-          <a href="/prototype/allocations.html#awaiting-tiering" class="govuk-!-font-weight-bold  govuk-!-font-size-36">
-            {{untieredPrisoners.length}}
-          </a>
-          <br/>
-          <a href="/prototype/allocations.html#awaiting-tiering" class="govuk-!-font-weight-bold govuk-!-font-size-30">Awaiting tiering</a>
-          </p>
+          <div>
+            <a href="/prototype/allocations.html#awaiting-tiering"
+              class="govuk-!-font-weight-bold  govuk-!-font-size-48">
+              {{untieredPrisoners.length}}
+            </a>
+          </div>
+          <div>
+          <a href="/prototype/allocations.html#awaiting-tiering"
+            class="govuk-!-font-weight-bold govuk-!-font-size-24">Awaiting tiering</a>
+          </div>
         </div>
         <div class="bottom-box">
-          <p>
-            View all new cases you have been allocated this week
-          </p>
+          <p>Prisoners who have not yet had their risk tiering completed.</p>
         </div>
       </div>
     </div>
   </div>
 
-  <h3 class="govuk-heading-m">Caseload</h3>
+  <h3 class="govuk-heading-m govuk-!-margin-top-7">Caseload</h3>
   <hr class="line">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
       <div>
         <div class="top-box">
-        <p>
-        <a href="/prototype/caseload" class="govuk-!-font-weight-bold govuk-!-font-size-36">
-          {{allocatedPrisoners.length}}
-        </a>
-        <br/>
-        <a href="/prototype/caseload" class="govuk-!-font-weight-bold govuk-!-font-size-30">My caseload</a>
-        </p>
+          <div>
+            <a href="/prototype/caseload" class="govuk-!-font-weight-bold
+              govuk-!-font-size-48">
+            {{allocatedPrisoners.length}}
+            </a>
+          </div>
+          <div>
+            <a href="/prototype/caseload" class="govuk-!-font-weight-bold
+              govuk-!-font-size-24">My caseload</a>
+          </div>
+        </div>
+        <div class="bottom-box">
+          <p>All cases allocated to you.</p>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <div>
+        <div class="top-box">
+          <div>
+            <a class="govuk-!-font-weight-bold govuk-!-font-size-48" href="#">
+              {{unallocatedPrisoners.length}}
+            </a>
+          </div>
+          <div>
+            <a href="/prototype/caseload" class="govuk-!-font-weight-bold
+              govuk-!-font-size-24">New cases</a>
+          </div>
         </div>
         <div class="bottom-box">
           <p>
-            View all new cases you have been allocated this week
+            Cases you have been allocated within the last 7 days.
           </p>
         </div>
       </div>
@@ -127,64 +150,49 @@
     <div class="govuk-grid-column-one-third">
       <div>
         <div class="top-box">
-        <p>
-        <a class="govuk-!-font-weight-bold govuk-!-font-size-36" href="/prototype/caseload">
-          {{unallocatedPrisoners.length}}
-        </a>
-        <br/>
-        <a href="/prototype/caseload" class="govuk-!-font-weight-bold govuk-!-font-size-30">New cases</a>
-        </p>
+          <div>
+            <a href="#" class="govuk-!-font-weight-bold govuk-!-font-size-48">
+              {{untieredPrisoners.length}}
+            </a>
+          </div>
+          <div>
+            <a href="#" class="govuk-!-font-weight-bold
+              govuk-!-font-size-24">Approaching handover</a>
+          </div>
         </div>
         <div class="bottom-box">
           <p>
-            Cases you have been allocated within the last 7 days
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="govuk-grid-column-one-third">
-      <div>
-        <div class="top-box">
-        <p>
-        <a href="/prototype/caseload" class="govuk-!-font-weight-bold govuk-!-font-size-36">
-          {{untieredPrisoners.length}}
-        </a>
-          <br/>
-          <a href="/prototype/caseload" class="govuk-!-font-weight-bold govuk-!-font-size-30">Approaching handover</a>
-        </p>
-        </div>
-        <div class="bottom-box">
-          <p>
-            Your cases that are 10 months from release
+            Cases that are 10 months or less from the release date.
           </p>
         </div>
       </div>
     </div>
   </div>
 
-  <h3 class="govuk-heading-m">Staff</h3>
+  <h3 class="govuk-heading-m govuk-!-margin-top-7">Staff</h3>
   <hr class="line">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
       <div>
         <div class="top-box">
-        <p>
-        <a href="/prototype/caseload" class="govuk-!-font-weight-bold govuk-!-font-size-36">
-          {{allocatedPrisoners.length}}
-        </a>
-        <br/>
-        <a href="/prototype/caseload" class="govuk-!-font-weight-bold govuk-!-font-size-30">Active POMS</a>
-        </p>
+          <div>
+            <a href="/prototype/caseload" class="govuk-!-font-weight-bold
+              govuk-!-font-size-48">
+              {{allocatedPrisoners.length}}
+            </a>
+          </div>
+          <div>
+            <a href="/prototype/poms" class="govuk-!-font-weight-bold
+              govuk-!-font-size-24">Active POMS</a>
+          </div>
         </div>
         <div class="bottom-box">
           <p>
-            View all new cases you have been allocated this week
+            Active and inactive Prison Offender Managers at this prison.
           </p>
         </div>
       </div>
     </div>
   </div>
-
-
 {% endblock %}
