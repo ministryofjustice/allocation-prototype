@@ -33,6 +33,14 @@ router.get('/prototype/', function (req, res) {
   }
 })
 
+router.get('/prototype/new-cases', function (req, res) {
+  res.render('prototype/new-cases')
+})
+
+router.get('/prototype/approaching-handover', function (req, res) {
+  res.render('prototype/approaching-handover')
+})
+
 router.get('/prototype/pom/:id', function (req, res) {
   let pomIndex = getPomIndex(req, req.params.id)
   res.render('prototype/pom', {'pomIndex': pomIndex})
