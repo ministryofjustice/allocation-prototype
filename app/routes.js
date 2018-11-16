@@ -15,7 +15,7 @@ router.post('/login', function (req, res) {
   let username = req.session.data['username']
   let password = req.session.data['password']
 
-  if (username === 'spo2' && password === 'password') {
+  if (username === 'moic' && password === 'password1234') {
     req.session.data['logged_in'] = true
     res.redirect('/prototype/')
   } else {
