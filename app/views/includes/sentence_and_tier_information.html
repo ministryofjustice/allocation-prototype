@@ -122,7 +122,12 @@
   <tr class="govuk-table__row">
     <td class="govuk-table__cell hmpps-table-cell__key">Primary POM</td>
     <td class="govuk-table__cell table_cell__left_align">
-      Unallocated
+      {% if prisoner.pomIndex %}
+        {{data.poms[prisoner.pomIndex] | personName}}
+      {% else %} 
+        Unallocated
+      {% endif %}
+
     </td>
     <td class="govuk-table__cell table_cell__right_align">
       <a href='#'>Change</a>

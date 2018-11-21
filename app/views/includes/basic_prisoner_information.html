@@ -22,4 +22,57 @@
         prisoner.nationality }}</td>
     </tr>
 </table>
+<!-- Offences -->
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row">Offences</td>
+    <td class="govuk-table__cell table_cell__right_align"></td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell hmpps-table-cell__key">Main offence</td>
+    <td class="govuk-table__cell table_cell__right_align">
+      {% if prisoner.main_offence %}
+        {{ prisoner.main_offence }}
+      {% else %}
+        Sexual activity with a female child under 16
+      {% endif %}
+    </td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell hmpps-table-cell__key">Release date</td>
+    <td class="govuk-table__cell table_cell__right_align">{{ prisoner.release_date }}</td>
+  </tr>
+  </tbody>
+</table>
+<!-- Case information -->
+<table class="govuk-table govuk-!-margin-top-8">
+  <tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row">Case information</td>
+    <td class="govuk-table__cell table_cell__right_align"></td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell hmpps-table-cell__key">Current responsibility</td>
+    <td class="govuk-table__cell table_cell__right_align">Prison</td>
+  </tr>
+
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell hmpps-table-cell__key">Case allocation</td>
+    <td class="govuk-table__cell table_cell__right_align">
+      {% if prisoner.tier %}
+        National Probation Service (NPS)
+      {% else %} 
+        Awaiting
+      {% endif %}
+    </td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell hmpps-table-cell__key">Tiering calculation</td>
+    <td class="govuk-table__cell table_cell__right_align">
+      <a href="/prototype/prisoner/{{ prisoner.id }}#sentence-and-tier">Tier {{ prisoner.tier}}</a></td>
+    </td>
+  </tr>
+  </tbody>
+</table>
 
